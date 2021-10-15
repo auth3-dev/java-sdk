@@ -17,7 +17,7 @@ Please note that this library is not suitable for Android device, however we can
 <dependency>
   <groupId>dev.auth3.identity</groupId>
   <artifactId>admin-sdk</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -25,13 +25,13 @@ Please note that this library is not suitable for Android device, however we can
 ### Apache Buildr
 
 ```python
-'dev.auth3.identity:admin-sdk:pom:0.0.1-SNAPSHOT'
+'dev.auth3.identity:admin-sdk:pom:1.0.0'
 ```
 
 # Apache Ivy
 
 ```xml
-<dependency org="dev.auth3.identity" name="admin-sdk" rev="0.0.1-SNAPSHOT">
+<dependency org="dev.auth3.identity" name="admin-sdk" rev="1.0.0">
   <artifact name="admin-sdk" type="pom" />
 </dependency>
 ```
@@ -40,30 +40,30 @@ Please note that this library is not suitable for Android device, however we can
 
 ```groovy
 @Grapes(
-@Grab(group='dev.auth3.identity', module='admin-sdk', version='0.0.1-SNAPSHOT')
+@Grab(group='dev.auth3.identity', module='admin-sdk', version='1.0.0')
 )
 ```
 
 ### Gradle/Grails
 ```python
-compile 'dev.auth3.identity:admin-sdk:0.0.1-SNAPSHOT'
+compile 'dev.auth3.identity:admin-sdk:1.0.0'
 ```
 
-# Scala SBT
+### Scala SBT
 
 ```python
-libraryDependencies += "dev.auth3.identity" % "admin-sdk" % "0.0.1-SNAPSHOT"
+libraryDependencies += "dev.auth3.identity" % "admin-sdk" % "1.0.0"
 ```
 
 Please note that we also support an official [Scala](https://github.com/auth3-dev/scala-sdk).
 
-# Leiningen
+### Leiningen
 
 ```python
-[dev.auth3.identity/admin-sdk "0.0.1-SNAPSHOT"]
+[dev.auth3.identity/admin-sdk "1.0.0"]
 ```
 
-### Additional help
+## Additional help
 
 You can find further help, examples, tools and suggestions [here](https://grpc.io/docs/languages/java/quickstart). For a deeper understanding of networking, naming conventions and error handling refer to [this document](https://developers.google.com/protocol-buffers/docs/javatutorial).
 
@@ -75,6 +75,7 @@ Not your target language? Check out our official SDKs for:
   * [cpp](https://github.com/auth3-dev/cpp-sdk)
   * [java](https://github.com/auth3-dev/admin-sdk)
   * [nodejs](https://github.com/auth3-dev/nodejs-sdk)
+  * [dart](https://github.com/auth3-dev/dart-sdk)
   * [python](https://github.com/auth3-dev/python-sdk)
   * [php](https://github.com/auth3-dev/php-sdk)
   * [ruby](https://github.com/auth3-dev/ruby-sdk)
