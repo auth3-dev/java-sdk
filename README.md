@@ -45,4 +45,4 @@ Not your target language? Check out our official SDKs for:
 
 ## License
 
-Read the [LICENSE](./LICENSE).
+Read the [LICENSE](https://github.com/auth3-dev/java-sdk/blob/main/LICENSE).
