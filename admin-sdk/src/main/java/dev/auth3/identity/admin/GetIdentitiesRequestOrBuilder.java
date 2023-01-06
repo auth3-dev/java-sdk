@@ -6,4 +6,22 @@ package dev.auth3.identity.admin;
 public interface GetIdentitiesRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>int32 page_size = 1[json_name = "pageSize"];</code>
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   * <code>string page_token = 2[json_name = "pageToken"];</code>
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   * <code>string page_token = 2[json_name = "pageToken"];</code>
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString
+      getPageTokenBytes();
 }

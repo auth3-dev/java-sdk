@@ -30,4 +30,22 @@ public interface GetIdentitiesResponseOrBuilder extends
    */
   dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder getIdentitiesOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
+
+  /**
+   * <code>int32 total_size = 3[json_name = "totalSize"];</code>
+   * @return The totalSize.
+   */
+  int getTotalSize();
 }

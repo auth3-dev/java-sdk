@@ -77,6 +77,37 @@ public final class AdminGrpc {
     return getGetIdentityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetIdentityByIdentifierRequest,
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse> getGetIdentityByIdentifierMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIdentityByIdentifier",
+      requestType = dev.auth3.identity.admin.GetIdentityByIdentifierRequest.class,
+      responseType = dev.auth3.identity.admin.GetIdentityByIdentifierResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetIdentityByIdentifierRequest,
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse> getGetIdentityByIdentifierMethod() {
+    io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetIdentityByIdentifierRequest, dev.auth3.identity.admin.GetIdentityByIdentifierResponse> getGetIdentityByIdentifierMethod;
+    if ((getGetIdentityByIdentifierMethod = AdminGrpc.getGetIdentityByIdentifierMethod) == null) {
+      synchronized (AdminGrpc.class) {
+        if ((getGetIdentityByIdentifierMethod = AdminGrpc.getGetIdentityByIdentifierMethod) == null) {
+          AdminGrpc.getGetIdentityByIdentifierMethod = getGetIdentityByIdentifierMethod =
+              io.grpc.MethodDescriptor.<dev.auth3.identity.admin.GetIdentityByIdentifierRequest, dev.auth3.identity.admin.GetIdentityByIdentifierResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIdentityByIdentifier"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  dev.auth3.identity.admin.GetIdentityByIdentifierRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  dev.auth3.identity.admin.GetIdentityByIdentifierResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AdminMethodDescriptorSupplier("GetIdentityByIdentifier"))
+              .build();
+        }
+      }
+    }
+    return getGetIdentityByIdentifierMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetIdentitiesByAttributeRequest,
       dev.auth3.identity.admin.GetIdentitiesByAttributeResponse> getGetIdentitiesByAttributeMethod;
 
@@ -1071,6 +1102,13 @@ public final class AdminGrpc {
 
     /**
      */
+    public void getIdentityByIdentifier(dev.auth3.identity.admin.GetIdentityByIdentifierRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentityByIdentifierResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIdentityByIdentifierMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void getIdentitiesByAttribute(dev.auth3.identity.admin.GetIdentitiesByAttributeRequest request,
         io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentitiesByAttributeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIdentitiesByAttributeMethod(), responseObserver);
@@ -1295,6 +1333,13 @@ public final class AdminGrpc {
                 dev.auth3.identity.admin.GetIdentityRequest,
                 dev.auth3.identity.admin.GetIdentityResponse>(
                   this, METHODID_GET_IDENTITY)))
+          .addMethod(
+            getGetIdentityByIdentifierMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                dev.auth3.identity.admin.GetIdentityByIdentifierRequest,
+                dev.auth3.identity.admin.GetIdentityByIdentifierResponse>(
+                  this, METHODID_GET_IDENTITY_BY_IDENTIFIER)))
           .addMethod(
             getGetIdentitiesByAttributeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1537,6 +1582,14 @@ public final class AdminGrpc {
         io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentityResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIdentityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getIdentityByIdentifier(dev.auth3.identity.admin.GetIdentityByIdentifierRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentityByIdentifierResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIdentityByIdentifierMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1810,6 +1863,13 @@ public final class AdminGrpc {
 
     /**
      */
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse getIdentityByIdentifier(dev.auth3.identity.admin.GetIdentityByIdentifierRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIdentityByIdentifierMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public dev.auth3.identity.admin.GetIdentitiesByAttributeResponse getIdentitiesByAttribute(dev.auth3.identity.admin.GetIdentitiesByAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIdentitiesByAttributeMethod(), getCallOptions(), request);
@@ -2047,6 +2107,14 @@ public final class AdminGrpc {
         dev.auth3.identity.admin.GetIdentityRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIdentityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<dev.auth3.identity.admin.GetIdentityByIdentifierResponse> getIdentityByIdentifier(
+        dev.auth3.identity.admin.GetIdentityByIdentifierRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIdentityByIdentifierMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2292,36 +2360,37 @@ public final class AdminGrpc {
 
   private static final int METHODID_CREATE_IDENTITY = 0;
   private static final int METHODID_GET_IDENTITY = 1;
-  private static final int METHODID_GET_IDENTITIES_BY_ATTRIBUTE = 2;
-  private static final int METHODID_GET_IDENTITIES = 3;
-  private static final int METHODID_UPDATE_IDENTITY = 4;
-  private static final int METHODID_DELETE_IDENTITY = 5;
-  private static final int METHODID_GET_ADDRESSES = 6;
-  private static final int METHODID_GET_ADDRESS = 7;
-  private static final int METHODID_UPDATE_ADDRESS = 8;
-  private static final int METHODID_GET_TRAITS = 9;
-  private static final int METHODID_UPDATE_TRAITS = 10;
-  private static final int METHODID_GET_CREDENTIALS = 11;
-  private static final int METHODID_UPDATE_CREDENTIAL = 12;
-  private static final int METHODID_GET_IDENTITY_LOGIN_ATTEMPTS = 13;
-  private static final int METHODID_CREATE_CONNECTION = 14;
-  private static final int METHODID_GET_CONNECTIONS = 15;
-  private static final int METHODID_UPDATE_CONNECTION = 16;
-  private static final int METHODID_DELETE_CONNECTION = 17;
-  private static final int METHODID_CREATE_ID_SCHEMA = 18;
-  private static final int METHODID_GET_ID_SCHEMAS = 19;
-  private static final int METHODID_GET_ID_SCHEMA = 20;
-  private static final int METHODID_GET_DEFAULT_ID_SCHEMA = 21;
-  private static final int METHODID_UPDATE_ID_SCHEMA = 22;
-  private static final int METHODID_MARK_DEFAULT_ID_SCHEMA = 23;
-  private static final int METHODID_DELETE_ID_SCHEMA = 24;
-  private static final int METHODID_CREATE_OAUTH2CLIENT = 25;
-  private static final int METHODID_GET_OAUTH2CLIENTS = 26;
-  private static final int METHODID_UPDATE_OAUTH2CLIENT = 27;
-  private static final int METHODID_DELETE_OAUTH2CLIENT = 28;
-  private static final int METHODID_GET_EMAILS_SETUP = 29;
-  private static final int METHODID_UPDATE_EMAILS_SETUP = 30;
-  private static final int METHODID_GET_USER_BASE_STATISTICS = 31;
+  private static final int METHODID_GET_IDENTITY_BY_IDENTIFIER = 2;
+  private static final int METHODID_GET_IDENTITIES_BY_ATTRIBUTE = 3;
+  private static final int METHODID_GET_IDENTITIES = 4;
+  private static final int METHODID_UPDATE_IDENTITY = 5;
+  private static final int METHODID_DELETE_IDENTITY = 6;
+  private static final int METHODID_GET_ADDRESSES = 7;
+  private static final int METHODID_GET_ADDRESS = 8;
+  private static final int METHODID_UPDATE_ADDRESS = 9;
+  private static final int METHODID_GET_TRAITS = 10;
+  private static final int METHODID_UPDATE_TRAITS = 11;
+  private static final int METHODID_GET_CREDENTIALS = 12;
+  private static final int METHODID_UPDATE_CREDENTIAL = 13;
+  private static final int METHODID_GET_IDENTITY_LOGIN_ATTEMPTS = 14;
+  private static final int METHODID_CREATE_CONNECTION = 15;
+  private static final int METHODID_GET_CONNECTIONS = 16;
+  private static final int METHODID_UPDATE_CONNECTION = 17;
+  private static final int METHODID_DELETE_CONNECTION = 18;
+  private static final int METHODID_CREATE_ID_SCHEMA = 19;
+  private static final int METHODID_GET_ID_SCHEMAS = 20;
+  private static final int METHODID_GET_ID_SCHEMA = 21;
+  private static final int METHODID_GET_DEFAULT_ID_SCHEMA = 22;
+  private static final int METHODID_UPDATE_ID_SCHEMA = 23;
+  private static final int METHODID_MARK_DEFAULT_ID_SCHEMA = 24;
+  private static final int METHODID_DELETE_ID_SCHEMA = 25;
+  private static final int METHODID_CREATE_OAUTH2CLIENT = 26;
+  private static final int METHODID_GET_OAUTH2CLIENTS = 27;
+  private static final int METHODID_UPDATE_OAUTH2CLIENT = 28;
+  private static final int METHODID_DELETE_OAUTH2CLIENT = 29;
+  private static final int METHODID_GET_EMAILS_SETUP = 30;
+  private static final int METHODID_UPDATE_EMAILS_SETUP = 31;
+  private static final int METHODID_GET_USER_BASE_STATISTICS = 32;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2347,6 +2416,10 @@ public final class AdminGrpc {
         case METHODID_GET_IDENTITY:
           serviceImpl.getIdentity((dev.auth3.identity.admin.GetIdentityRequest) request,
               (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentityResponse>) responseObserver);
+          break;
+        case METHODID_GET_IDENTITY_BY_IDENTIFIER:
+          serviceImpl.getIdentityByIdentifier((dev.auth3.identity.admin.GetIdentityByIdentifierRequest) request,
+              (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetIdentityByIdentifierResponse>) responseObserver);
           break;
         case METHODID_GET_IDENTITIES_BY_ATTRIBUTE:
           serviceImpl.getIdentitiesByAttribute((dev.auth3.identity.admin.GetIdentitiesByAttributeRequest) request,
@@ -2531,6 +2604,7 @@ public final class AdminGrpc {
               .setSchemaDescriptor(new AdminFileDescriptorSupplier())
               .addMethod(getCreateIdentityMethod())
               .addMethod(getGetIdentityMethod())
+              .addMethod(getGetIdentityByIdentifierMethod())
               .addMethod(getGetIdentitiesByAttributeMethod())
               .addMethod(getGetIdentitiesMethod())
               .addMethod(getUpdateIdentityMethod())

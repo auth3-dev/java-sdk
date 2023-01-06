@@ -4,27 +4,25 @@
 package dev.auth3.identity.admin;
 
 /**
- * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse}
+ * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse}
  */
-public final class GetIdentitiesResponse extends
+public final class GetIdentityByIdentifierResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
-    GetIdentitiesResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+    GetIdentityByIdentifierResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetIdentitiesResponse.newBuilder() to construct.
-  private GetIdentitiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetIdentityByIdentifierResponse.newBuilder() to construct.
+  private GetIdentityByIdentifierResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetIdentitiesResponse() {
-    identities_ = java.util.Collections.emptyList();
-    nextPageToken_ = "";
+  private GetIdentityByIdentifierResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetIdentitiesResponse();
+    return new GetIdentityByIdentifierResponse();
   }
 
   @java.lang.Override
@@ -32,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetIdentitiesResponse(
+  private GetIdentityByIdentifierResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -40,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,23 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              identities_ = new java.util.ArrayList<dev.auth3.identity.admin.GetIdentitiesResponse.Identity>();
-              mutable_bitField0_ |= 0x00000001;
+            dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder subBuilder = null;
+            if (identity_ != null) {
+              subBuilder = identity_.toBuilder();
             }
-            identities_.add(
-                input.readMessage(dev.auth3.identity.admin.GetIdentitiesResponse.Identity.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            identity_ = input.readMessage(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(identity_);
+              identity_ = subBuilder.buildPartial();
+            }
 
-            nextPageToken_ = s;
-            break;
-          }
-          case 24: {
-
-            totalSize_ = input.readInt32();
             break;
           }
           default: {
@@ -86,136 +76,25 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        identities_ = java.util.Collections.unmodifiableList(identities_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_descriptor;
+    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_fieldAccessorTable
+    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            dev.auth3.identity.admin.GetIdentitiesResponse.class, dev.auth3.identity.admin.GetIdentitiesResponse.Builder.class);
-  }
-
-  /**
-   * Protobuf enum {@code depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock}
-   */
-  public enum Lock
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNLOCKED = 0;</code>
-     */
-    UNLOCKED(0),
-    /**
-     * <code>ADMIN_LOCKED = 1;</code>
-     */
-    ADMIN_LOCKED(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNLOCKED = 0;</code>
-     */
-    public static final int UNLOCKED_VALUE = 0;
-    /**
-     * <code>ADMIN_LOCKED = 1;</code>
-     */
-    public static final int ADMIN_LOCKED_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Lock valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Lock forNumber(int value) {
-      switch (value) {
-        case 0: return UNLOCKED;
-        case 1: return ADMIN_LOCKED;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Lock>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Lock> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Lock>() {
-            public Lock findValueByNumber(int number) {
-              return Lock.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return dev.auth3.identity.admin.GetIdentitiesResponse.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Lock[] VALUES = values();
-
-    public static Lock valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Lock(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock)
+            dev.auth3.identity.admin.GetIdentityByIdentifierResponse.class, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Builder.class);
   }
 
   public interface IdentityOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity)
+      // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -273,34 +152,105 @@ private static final long serialVersionUID = 0L;
         getMainIdentifierBytes();
 
     /**
-     * <code>string schema_id = 5[json_name = "schemaId"];</code>
+     * <code>string traits_id = 5[json_name = "traitsId"];</code>
+     * @return The traitsId.
+     */
+    java.lang.String getTraitsId();
+    /**
+     * <code>string traits_id = 5[json_name = "traitsId"];</code>
+     * @return The bytes for traitsId.
+     */
+    com.google.protobuf.ByteString
+        getTraitsIdBytes();
+
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @return A list containing the addressesIds.
+     */
+    java.util.List<java.lang.String>
+        getAddressesIdsList();
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @return The count of addressesIds.
+     */
+    int getAddressesIdsCount();
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @param index The index of the element to return.
+     * @return The addressesIds at the given index.
+     */
+    java.lang.String getAddressesIds(int index);
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addressesIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getAddressesIdsBytes(int index);
+
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    int getCredentialsIdsCount();
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    boolean containsCredentialsIds(
+        java.lang.String key);
+    /**
+     * Use {@link #getCredentialsIdsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getCredentialsIds();
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getCredentialsIdsMap();
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+
+    java.lang.String getCredentialsIdsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+
+    java.lang.String getCredentialsIdsOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>string schema_id = 8[json_name = "schemaId"];</code>
      * @return The schemaId.
      */
     java.lang.String getSchemaId();
     /**
-     * <code>string schema_id = 5[json_name = "schemaId"];</code>
+     * <code>string schema_id = 8[json_name = "schemaId"];</code>
      * @return The bytes for schemaId.
      */
     com.google.protobuf.ByteString
         getSchemaIdBytes();
 
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
      * @return The enum numeric value on the wire for lock.
      */
     int getLockValue();
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
      * @return The lock.
      */
-    dev.auth3.identity.admin.GetIdentitiesResponse.Lock getLock();
+    dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock getLock();
   }
   /**
-   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity}
+   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity}
    */
   public static final class Identity extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity)
+      // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
       IdentityOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Identity.newBuilder() to construct.
@@ -310,6 +260,8 @@ private static final long serialVersionUID = 0L;
     private Identity() {
       identityId_ = "";
       mainIdentifier_ = "";
+      traitsId_ = "";
+      addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       schemaId_ = "";
       lock_ = 0;
     }
@@ -334,6 +286,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -385,10 +338,38 @@ private static final long serialVersionUID = 0L;
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              traitsId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                addressesIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              addressesIds_.add(s);
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                credentialsIds_ = com.google.protobuf.MapField.newMapField(
+                    CredentialsIdsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              credentialsIds__ = input.readMessage(
+                  CredentialsIdsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              credentialsIds_.getMutableMap().put(
+                  credentialsIds__.getKey(), credentialsIds__.getValue());
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               schemaId_ = s;
               break;
             }
-            case 48: {
+            case 72: {
               int rawValue = input.readEnum();
 
               lock_ = rawValue;
@@ -409,21 +390,144 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          addressesIds_ = addressesIds_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_Identity_descriptor;
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetCredentialsIds();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_Identity_fieldAccessorTable
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              dev.auth3.identity.admin.GetIdentitiesResponse.Identity.class, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder.class);
+              dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.class, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock}
+     */
+    public enum Lock
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>UNLOCKED = 0;</code>
+       */
+      UNLOCKED(0),
+      /**
+       * <code>ADMIN_LOCKED = 1;</code>
+       */
+      ADMIN_LOCKED(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>UNLOCKED = 0;</code>
+       */
+      public static final int UNLOCKED_VALUE = 0;
+      /**
+       * <code>ADMIN_LOCKED = 1;</code>
+       */
+      public static final int ADMIN_LOCKED_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Lock valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Lock forNumber(int value) {
+        switch (value) {
+          case 0: return UNLOCKED;
+          case 1: return ADMIN_LOCKED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Lock>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Lock> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Lock>() {
+              public Lock findValueByNumber(int number) {
+                return Lock.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Lock[] VALUES = values();
+
+      public static Lock valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Lock(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock)
     }
 
     public static final int IDENTITY_ID_FIELD_NUMBER = 1;
@@ -554,10 +658,164 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static final int SCHEMA_ID_FIELD_NUMBER = 5;
+    public static final int TRAITS_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object traitsId_;
+    /**
+     * <code>string traits_id = 5[json_name = "traitsId"];</code>
+     * @return The traitsId.
+     */
+    @java.lang.Override
+    public java.lang.String getTraitsId() {
+      java.lang.Object ref = traitsId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        traitsId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string traits_id = 5[json_name = "traitsId"];</code>
+     * @return The bytes for traitsId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTraitsIdBytes() {
+      java.lang.Object ref = traitsId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        traitsId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSES_IDS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList addressesIds_;
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @return A list containing the addressesIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddressesIdsList() {
+      return addressesIds_;
+    }
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @return The count of addressesIds.
+     */
+    public int getAddressesIdsCount() {
+      return addressesIds_.size();
+    }
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @param index The index of the element to return.
+     * @return The addressesIds at the given index.
+     */
+    public java.lang.String getAddressesIds(int index) {
+      return addressesIds_.get(index);
+    }
+    /**
+     * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addressesIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddressesIdsBytes(int index) {
+      return addressesIds_.getByteString(index);
+    }
+
+    public static final int CREDENTIALS_IDS_FIELD_NUMBER = 7;
+    private static final class CredentialsIdsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> credentialsIds_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetCredentialsIds() {
+      if (credentialsIds_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CredentialsIdsDefaultEntryHolder.defaultEntry);
+      }
+      return credentialsIds_;
+    }
+
+    public int getCredentialsIdsCount() {
+      return internalGetCredentialsIds().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsCredentialsIds(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetCredentialsIds().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getCredentialsIdsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getCredentialsIds() {
+      return getCredentialsIdsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getCredentialsIdsMap() {
+      return internalGetCredentialsIds().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getCredentialsIdsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCredentialsIds().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getCredentialsIdsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCredentialsIds().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int SCHEMA_ID_FIELD_NUMBER = 8;
     private volatile java.lang.Object schemaId_;
     /**
-     * <code>string schema_id = 5[json_name = "schemaId"];</code>
+     * <code>string schema_id = 8[json_name = "schemaId"];</code>
      * @return The schemaId.
      */
     @java.lang.Override
@@ -574,7 +832,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string schema_id = 5[json_name = "schemaId"];</code>
+     * <code>string schema_id = 8[json_name = "schemaId"];</code>
      * @return The bytes for schemaId.
      */
     @java.lang.Override
@@ -592,23 +850,23 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static final int LOCK_FIELD_NUMBER = 6;
+    public static final int LOCK_FIELD_NUMBER = 9;
     private int lock_;
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
      * @return The enum numeric value on the wire for lock.
      */
     @java.lang.Override public int getLockValue() {
       return lock_;
     }
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
      * @return The lock.
      */
-    @java.lang.Override public dev.auth3.identity.admin.GetIdentitiesResponse.Lock getLock() {
+    @java.lang.Override public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock getLock() {
       @SuppressWarnings("deprecation")
-      dev.auth3.identity.admin.GetIdentitiesResponse.Lock result = dev.auth3.identity.admin.GetIdentitiesResponse.Lock.valueOf(lock_);
-      return result == null ? dev.auth3.identity.admin.GetIdentitiesResponse.Lock.UNRECOGNIZED : result;
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock result = dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.valueOf(lock_);
+      return result == null ? dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -637,11 +895,23 @@ private static final long serialVersionUID = 0L;
       if (!getMainIdentifierBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mainIdentifier_);
       }
-      if (!getSchemaIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, schemaId_);
+      if (!getTraitsIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, traitsId_);
       }
-      if (lock_ != dev.auth3.identity.admin.GetIdentitiesResponse.Lock.UNLOCKED.getNumber()) {
-        output.writeEnum(6, lock_);
+      for (int i = 0; i < addressesIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, addressesIds_.getRaw(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetCredentialsIds(),
+          CredentialsIdsDefaultEntryHolder.defaultEntry,
+          7);
+      if (!getSchemaIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, schemaId_);
+      }
+      if (lock_ != dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED.getNumber()) {
+        output.writeEnum(9, lock_);
       }
       unknownFields.writeTo(output);
     }
@@ -666,12 +936,33 @@ private static final long serialVersionUID = 0L;
       if (!getMainIdentifierBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mainIdentifier_);
       }
-      if (!getSchemaIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, schemaId_);
+      if (!getTraitsIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, traitsId_);
       }
-      if (lock_ != dev.auth3.identity.admin.GetIdentitiesResponse.Lock.UNLOCKED.getNumber()) {
+      {
+        int dataSize = 0;
+        for (int i = 0; i < addressesIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(addressesIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAddressesIdsList().size();
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetCredentialsIds().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        credentialsIds__ = CredentialsIdsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, lock_);
+            .computeMessageSize(7, credentialsIds__);
+      }
+      if (!getSchemaIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, schemaId_);
+      }
+      if (lock_ != dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, lock_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -683,10 +974,10 @@ private static final long serialVersionUID = 0L;
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof dev.auth3.identity.admin.GetIdentitiesResponse.Identity)) {
+      if (!(obj instanceof dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity)) {
         return super.equals(obj);
       }
-      dev.auth3.identity.admin.GetIdentitiesResponse.Identity other = (dev.auth3.identity.admin.GetIdentitiesResponse.Identity) obj;
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity other = (dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity) obj;
 
       if (!getIdentityId()
           .equals(other.getIdentityId())) return false;
@@ -702,6 +993,12 @@ private static final long serialVersionUID = 0L;
       }
       if (!getMainIdentifier()
           .equals(other.getMainIdentifier())) return false;
+      if (!getTraitsId()
+          .equals(other.getTraitsId())) return false;
+      if (!getAddressesIdsList()
+          .equals(other.getAddressesIdsList())) return false;
+      if (!internalGetCredentialsIds().equals(
+          other.internalGetCredentialsIds())) return false;
       if (!getSchemaId()
           .equals(other.getSchemaId())) return false;
       if (lock_ != other.lock_) return false;
@@ -728,6 +1025,16 @@ private static final long serialVersionUID = 0L;
       }
       hash = (37 * hash) + MAIN_IDENTIFIER_FIELD_NUMBER;
       hash = (53 * hash) + getMainIdentifier().hashCode();
+      hash = (37 * hash) + TRAITS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTraitsId().hashCode();
+      if (getAddressesIdsCount() > 0) {
+        hash = (37 * hash) + ADDRESSES_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getAddressesIdsList().hashCode();
+      }
+      if (!internalGetCredentialsIds().getMap().isEmpty()) {
+        hash = (37 * hash) + CREDENTIALS_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetCredentialsIds().hashCode();
+      }
       hash = (37 * hash) + SCHEMA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSchemaId().hashCode();
       hash = (37 * hash) + LOCK_FIELD_NUMBER;
@@ -737,69 +1044,69 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(byte[] data)
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(java.io.InputStream input)
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseDelimitedFrom(java.io.InputStream input)
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseDelimitedFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity parseFrom(
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -812,7 +1119,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(dev.auth3.identity.admin.GetIdentitiesResponse.Identity prototype) {
+    public static Builder newBuilder(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -828,26 +1135,48 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
-     * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity}
+     * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity)
-        dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder {
+        // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_Identity_descriptor;
+        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 7:
+            return internalGetCredentialsIds();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 7:
+            return internalGetMutableCredentialsIds();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_Identity_fieldAccessorTable
+        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                dev.auth3.identity.admin.GetIdentitiesResponse.Identity.class, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder.class);
+                dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.class, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder.class);
       }
 
-      // Construct using dev.auth3.identity.admin.GetIdentitiesResponse.Identity.newBuilder()
+      // Construct using dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -881,6 +1210,11 @@ private static final long serialVersionUID = 0L;
         }
         mainIdentifier_ = "";
 
+        traitsId_ = "";
+
+        addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableCredentialsIds().clear();
         schemaId_ = "";
 
         lock_ = 0;
@@ -891,17 +1225,17 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_Identity_descriptor;
+        return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_Identity_descriptor;
       }
 
       @java.lang.Override
-      public dev.auth3.identity.admin.GetIdentitiesResponse.Identity getDefaultInstanceForType() {
-        return dev.auth3.identity.admin.GetIdentitiesResponse.Identity.getDefaultInstance();
+      public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity getDefaultInstanceForType() {
+        return dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDefaultInstance();
       }
 
       @java.lang.Override
-      public dev.auth3.identity.admin.GetIdentitiesResponse.Identity build() {
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity result = buildPartial();
+      public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity build() {
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -909,8 +1243,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public dev.auth3.identity.admin.GetIdentitiesResponse.Identity buildPartial() {
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity result = new dev.auth3.identity.admin.GetIdentitiesResponse.Identity(this);
+      public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity buildPartial() {
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity result = new dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity(this);
+        int from_bitField0_ = bitField0_;
         result.identityId_ = identityId_;
         if (createdAtBuilder_ == null) {
           result.createdAt_ = createdAt_;
@@ -923,6 +1258,14 @@ private static final long serialVersionUID = 0L;
           result.updatedAt_ = updatedAtBuilder_.build();
         }
         result.mainIdentifier_ = mainIdentifier_;
+        result.traitsId_ = traitsId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          addressesIds_ = addressesIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.addressesIds_ = addressesIds_;
+        result.credentialsIds_ = internalGetCredentialsIds();
+        result.credentialsIds_.makeImmutable();
         result.schemaId_ = schemaId_;
         result.lock_ = lock_;
         onBuilt();
@@ -963,16 +1306,16 @@ private static final long serialVersionUID = 0L;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof dev.auth3.identity.admin.GetIdentitiesResponse.Identity) {
-          return mergeFrom((dev.auth3.identity.admin.GetIdentitiesResponse.Identity)other);
+        if (other instanceof dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity) {
+          return mergeFrom((dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(dev.auth3.identity.admin.GetIdentitiesResponse.Identity other) {
-        if (other == dev.auth3.identity.admin.GetIdentitiesResponse.Identity.getDefaultInstance()) return this;
+      public Builder mergeFrom(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity other) {
+        if (other == dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDefaultInstance()) return this;
         if (!other.getIdentityId().isEmpty()) {
           identityId_ = other.identityId_;
           onChanged();
@@ -987,6 +1330,22 @@ private static final long serialVersionUID = 0L;
           mainIdentifier_ = other.mainIdentifier_;
           onChanged();
         }
+        if (!other.getTraitsId().isEmpty()) {
+          traitsId_ = other.traitsId_;
+          onChanged();
+        }
+        if (!other.addressesIds_.isEmpty()) {
+          if (addressesIds_.isEmpty()) {
+            addressesIds_ = other.addressesIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAddressesIdsIsMutable();
+            addressesIds_.addAll(other.addressesIds_);
+          }
+          onChanged();
+        }
+        internalGetMutableCredentialsIds().mergeFrom(
+            other.internalGetCredentialsIds());
         if (!other.getSchemaId().isEmpty()) {
           schemaId_ = other.schemaId_;
           onChanged();
@@ -1009,11 +1368,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity parsedMessage = null;
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (dev.auth3.identity.admin.GetIdentitiesResponse.Identity) e.getUnfinishedMessage();
+          parsedMessage = (dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1022,6 +1381,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object identityId_ = "";
       /**
@@ -1413,9 +1773,323 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      private java.lang.Object traitsId_ = "";
+      /**
+       * <code>string traits_id = 5[json_name = "traitsId"];</code>
+       * @return The traitsId.
+       */
+      public java.lang.String getTraitsId() {
+        java.lang.Object ref = traitsId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          traitsId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string traits_id = 5[json_name = "traitsId"];</code>
+       * @return The bytes for traitsId.
+       */
+      public com.google.protobuf.ByteString
+          getTraitsIdBytes() {
+        java.lang.Object ref = traitsId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          traitsId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string traits_id = 5[json_name = "traitsId"];</code>
+       * @param value The traitsId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTraitsId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        traitsId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string traits_id = 5[json_name = "traitsId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTraitsId() {
+        
+        traitsId_ = getDefaultInstance().getTraitsId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string traits_id = 5[json_name = "traitsId"];</code>
+       * @param value The bytes for traitsId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTraitsIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        traitsId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureAddressesIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          addressesIds_ = new com.google.protobuf.LazyStringArrayList(addressesIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @return A list containing the addressesIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAddressesIdsList() {
+        return addressesIds_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @return The count of addressesIds.
+       */
+      public int getAddressesIdsCount() {
+        return addressesIds_.size();
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param index The index of the element to return.
+       * @return The addressesIds at the given index.
+       */
+      public java.lang.String getAddressesIds(int index) {
+        return addressesIds_.get(index);
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the addressesIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getAddressesIdsBytes(int index) {
+        return addressesIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param index The index to set the value at.
+       * @param value The addressesIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressesIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAddressesIdsIsMutable();
+        addressesIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param value The addressesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddressesIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAddressesIdsIsMutable();
+        addressesIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param values The addressesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAddressesIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAddressesIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, addressesIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddressesIds() {
+        addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>
+       * @param value The bytes of the addressesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddressesIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureAddressesIdsIsMutable();
+        addressesIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> credentialsIds_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetCredentialsIds() {
+        if (credentialsIds_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              CredentialsIdsDefaultEntryHolder.defaultEntry);
+        }
+        return credentialsIds_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableCredentialsIds() {
+        onChanged();;
+        if (credentialsIds_ == null) {
+          credentialsIds_ = com.google.protobuf.MapField.newMapField(
+              CredentialsIdsDefaultEntryHolder.defaultEntry);
+        }
+        if (!credentialsIds_.isMutable()) {
+          credentialsIds_ = credentialsIds_.copy();
+        }
+        return credentialsIds_;
+      }
+
+      public int getCredentialsIdsCount() {
+        return internalGetCredentialsIds().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsCredentialsIds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetCredentialsIds().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getCredentialsIdsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getCredentialsIds() {
+        return getCredentialsIdsMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getCredentialsIdsMap() {
+        return internalGetCredentialsIds().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getCredentialsIdsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetCredentialsIds().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getCredentialsIdsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetCredentialsIds().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearCredentialsIds() {
+        internalGetMutableCredentialsIds().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+
+      public Builder removeCredentialsIds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableCredentialsIds().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableCredentialsIds() {
+        return internalGetMutableCredentialsIds().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+      public Builder putCredentialsIds(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableCredentialsIds().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; credentials_ids = 7[json_name = "credentialsIds"];</code>
+       */
+
+      public Builder putAllCredentialsIds(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableCredentialsIds().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
       private java.lang.Object schemaId_ = "";
       /**
-       * <code>string schema_id = 5[json_name = "schemaId"];</code>
+       * <code>string schema_id = 8[json_name = "schemaId"];</code>
        * @return The schemaId.
        */
       public java.lang.String getSchemaId() {
@@ -1431,7 +2105,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string schema_id = 5[json_name = "schemaId"];</code>
+       * <code>string schema_id = 8[json_name = "schemaId"];</code>
        * @return The bytes for schemaId.
        */
       public com.google.protobuf.ByteString
@@ -1448,7 +2122,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string schema_id = 5[json_name = "schemaId"];</code>
+       * <code>string schema_id = 8[json_name = "schemaId"];</code>
        * @param value The schemaId to set.
        * @return This builder for chaining.
        */
@@ -1463,7 +2137,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string schema_id = 5[json_name = "schemaId"];</code>
+       * <code>string schema_id = 8[json_name = "schemaId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSchemaId() {
@@ -1473,7 +2147,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string schema_id = 5[json_name = "schemaId"];</code>
+       * <code>string schema_id = 8[json_name = "schemaId"];</code>
        * @param value The bytes for schemaId to set.
        * @return This builder for chaining.
        */
@@ -1491,14 +2165,14 @@ private static final long serialVersionUID = 0L;
 
       private int lock_ = 0;
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
        * @return The enum numeric value on the wire for lock.
        */
       @java.lang.Override public int getLockValue() {
         return lock_;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
        * @param value The enum numeric value on the wire for lock to set.
        * @return This builder for chaining.
        */
@@ -1509,21 +2183,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
        * @return The lock.
        */
       @java.lang.Override
-      public dev.auth3.identity.admin.GetIdentitiesResponse.Lock getLock() {
+      public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock getLock() {
         @SuppressWarnings("deprecation")
-        dev.auth3.identity.admin.GetIdentitiesResponse.Lock result = dev.auth3.identity.admin.GetIdentitiesResponse.Lock.valueOf(lock_);
-        return result == null ? dev.auth3.identity.admin.GetIdentitiesResponse.Lock.UNRECOGNIZED : result;
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock result = dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.valueOf(lock_);
+        return result == null ? dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNRECOGNIZED : result;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
        * @param value The lock to set.
        * @return This builder for chaining.
        */
-      public Builder setLock(dev.auth3.identity.admin.GetIdentitiesResponse.Lock value) {
+      public Builder setLock(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1533,7 +2207,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Lock lock = 6[json_name = "lock"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLock() {
@@ -1555,16 +2229,16 @@ private static final long serialVersionUID = 0L;
       }
 
 
-      // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity)
+      // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
     }
 
-    // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity)
-    private static final dev.auth3.identity.admin.GetIdentitiesResponse.Identity DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+    private static final dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new dev.auth3.identity.admin.GetIdentitiesResponse.Identity();
+      DEFAULT_INSTANCE = new dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity();
     }
 
-    public static dev.auth3.identity.admin.GetIdentitiesResponse.Identity getDefaultInstance() {
+    public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1589,99 +2263,36 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.GetIdentitiesResponse.Identity getDefaultInstanceForType() {
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public static final int IDENTITIES_FIELD_NUMBER = 1;
-  private java.util.List<dev.auth3.identity.admin.GetIdentitiesResponse.Identity> identities_;
+  public static final int IDENTITY_FIELD_NUMBER = 1;
+  private dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity identity_;
   /**
-   * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+   * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
+   * @return Whether the identity field is set.
    */
   @java.lang.Override
-  public java.util.List<dev.auth3.identity.admin.GetIdentitiesResponse.Identity> getIdentitiesList() {
-    return identities_;
+  public boolean hasIdentity() {
+    return identity_ != null;
   }
   /**
-   * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+   * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
+   * @return The identity.
    */
   @java.lang.Override
-  public java.util.List<? extends dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder> 
-      getIdentitiesOrBuilderList() {
-    return identities_;
+  public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity getIdentity() {
+    return identity_ == null ? dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDefaultInstance() : identity_;
   }
   /**
-   * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+   * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
    */
   @java.lang.Override
-  public int getIdentitiesCount() {
-    return identities_.size();
-  }
-  /**
-   * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-   */
-  @java.lang.Override
-  public dev.auth3.identity.admin.GetIdentitiesResponse.Identity getIdentities(int index) {
-    return identities_.get(index);
-  }
-  /**
-   * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-   */
-  @java.lang.Override
-  public dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder getIdentitiesOrBuilder(
-      int index) {
-    return identities_.get(index);
-  }
-
-  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
-  /**
-   * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-   * @return The nextPageToken.
-   */
-  @java.lang.Override
-  public java.lang.String getNextPageToken() {
-    java.lang.Object ref = nextPageToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nextPageToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-   * @return The bytes for nextPageToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
-    java.lang.Object ref = nextPageToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nextPageToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
-  private int totalSize_;
-  /**
-   * <code>int32 total_size = 3[json_name = "totalSize"];</code>
-   * @return The totalSize.
-   */
-  @java.lang.Override
-  public int getTotalSize() {
-    return totalSize_;
+  public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder getIdentityOrBuilder() {
+    return getIdentity();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1698,14 +2309,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < identities_.size(); i++) {
-      output.writeMessage(1, identities_.get(i));
-    }
-    if (!getNextPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
-    }
-    if (totalSize_ != 0) {
-      output.writeInt32(3, totalSize_);
+    if (identity_ != null) {
+      output.writeMessage(1, getIdentity());
     }
     unknownFields.writeTo(output);
   }
@@ -1716,16 +2321,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < identities_.size(); i++) {
+    if (identity_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, identities_.get(i));
-    }
-    if (!getNextPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
-    }
-    if (totalSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, totalSize_);
+        .computeMessageSize(1, getIdentity());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1737,17 +2335,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof dev.auth3.identity.admin.GetIdentitiesResponse)) {
+    if (!(obj instanceof dev.auth3.identity.admin.GetIdentityByIdentifierResponse)) {
       return super.equals(obj);
     }
-    dev.auth3.identity.admin.GetIdentitiesResponse other = (dev.auth3.identity.admin.GetIdentitiesResponse) obj;
+    dev.auth3.identity.admin.GetIdentityByIdentifierResponse other = (dev.auth3.identity.admin.GetIdentityByIdentifierResponse) obj;
 
-    if (!getIdentitiesList()
-        .equals(other.getIdentitiesList())) return false;
-    if (!getNextPageToken()
-        .equals(other.getNextPageToken())) return false;
-    if (getTotalSize()
-        != other.getTotalSize()) return false;
+    if (hasIdentity() != other.hasIdentity()) return false;
+    if (hasIdentity()) {
+      if (!getIdentity()
+          .equals(other.getIdentity())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1759,82 +2356,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getIdentitiesCount() > 0) {
-      hash = (37 * hash) + IDENTITIES_FIELD_NUMBER;
-      hash = (53 * hash) + getIdentitiesList().hashCode();
+    if (hasIdentity()) {
+      hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentity().hashCode();
     }
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
-    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(byte[] data)
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(java.io.InputStream input)
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseDelimitedFrom(java.io.InputStream input)
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseDelimitedFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.GetIdentitiesResponse parseFrom(
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1847,7 +2440,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(dev.auth3.identity.admin.GetIdentitiesResponse prototype) {
+  public static Builder newBuilder(dev.auth3.identity.admin.GetIdentityByIdentifierResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -1863,26 +2456,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse}
+   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
-      dev.auth3.identity.admin.GetIdentitiesResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_descriptor;
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_fieldAccessorTable
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              dev.auth3.identity.admin.GetIdentitiesResponse.class, dev.auth3.identity.admin.GetIdentitiesResponse.Builder.class);
+              dev.auth3.identity.admin.GetIdentityByIdentifierResponse.class, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Builder.class);
     }
 
-    // Construct using dev.auth3.identity.admin.GetIdentitiesResponse.newBuilder()
+    // Construct using dev.auth3.identity.admin.GetIdentityByIdentifierResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1895,39 +2488,34 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getIdentitiesFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (identitiesBuilder_ == null) {
-        identities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (identityBuilder_ == null) {
+        identity_ = null;
       } else {
-        identitiesBuilder_.clear();
+        identity_ = null;
+        identityBuilder_ = null;
       }
-      nextPageToken_ = "";
-
-      totalSize_ = 0;
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentitiesResponse_descriptor;
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_GetIdentityByIdentifierResponse_descriptor;
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.GetIdentitiesResponse getDefaultInstanceForType() {
-      return dev.auth3.identity.admin.GetIdentitiesResponse.getDefaultInstance();
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse getDefaultInstanceForType() {
+      return dev.auth3.identity.admin.GetIdentityByIdentifierResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.GetIdentitiesResponse build() {
-      dev.auth3.identity.admin.GetIdentitiesResponse result = buildPartial();
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse build() {
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1935,20 +2523,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.GetIdentitiesResponse buildPartial() {
-      dev.auth3.identity.admin.GetIdentitiesResponse result = new dev.auth3.identity.admin.GetIdentitiesResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (identitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          identities_ = java.util.Collections.unmodifiableList(identities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.identities_ = identities_;
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse buildPartial() {
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse result = new dev.auth3.identity.admin.GetIdentityByIdentifierResponse(this);
+      if (identityBuilder_ == null) {
+        result.identity_ = identity_;
       } else {
-        result.identities_ = identitiesBuilder_.build();
+        result.identity_ = identityBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.totalSize_ = totalSize_;
       onBuilt();
       return result;
     }
@@ -1987,48 +2568,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof dev.auth3.identity.admin.GetIdentitiesResponse) {
-        return mergeFrom((dev.auth3.identity.admin.GetIdentitiesResponse)other);
+      if (other instanceof dev.auth3.identity.admin.GetIdentityByIdentifierResponse) {
+        return mergeFrom((dev.auth3.identity.admin.GetIdentityByIdentifierResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(dev.auth3.identity.admin.GetIdentitiesResponse other) {
-      if (other == dev.auth3.identity.admin.GetIdentitiesResponse.getDefaultInstance()) return this;
-      if (identitiesBuilder_ == null) {
-        if (!other.identities_.isEmpty()) {
-          if (identities_.isEmpty()) {
-            identities_ = other.identities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureIdentitiesIsMutable();
-            identities_.addAll(other.identities_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.identities_.isEmpty()) {
-          if (identitiesBuilder_.isEmpty()) {
-            identitiesBuilder_.dispose();
-            identitiesBuilder_ = null;
-            identities_ = other.identities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            identitiesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIdentitiesFieldBuilder() : null;
-          } else {
-            identitiesBuilder_.addAllMessages(other.identities_);
-          }
-        }
-      }
-      if (!other.getNextPageToken().isEmpty()) {
-        nextPageToken_ = other.nextPageToken_;
-        onChanged();
-      }
-      if (other.getTotalSize() != 0) {
-        setTotalSize(other.getTotalSize());
+    public Builder mergeFrom(dev.auth3.identity.admin.GetIdentityByIdentifierResponse other) {
+      if (other == dev.auth3.identity.admin.GetIdentityByIdentifierResponse.getDefaultInstance()) return this;
+      if (other.hasIdentity()) {
+        mergeIdentity(other.getIdentity());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2045,11 +2596,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      dev.auth3.identity.admin.GetIdentitiesResponse parsedMessage = null;
+      dev.auth3.identity.admin.GetIdentityByIdentifierResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (dev.auth3.identity.admin.GetIdentitiesResponse) e.getUnfinishedMessage();
+        parsedMessage = (dev.auth3.identity.admin.GetIdentityByIdentifierResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -2058,353 +2609,124 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private java.util.List<dev.auth3.identity.admin.GetIdentitiesResponse.Identity> identities_ =
-      java.util.Collections.emptyList();
-    private void ensureIdentitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        identities_ = new java.util.ArrayList<dev.auth3.identity.admin.GetIdentitiesResponse.Identity>(identities_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder> identitiesBuilder_;
-
+    private dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity identity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder> identityBuilder_;
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
+     * @return Whether the identity field is set.
      */
-    public java.util.List<dev.auth3.identity.admin.GetIdentitiesResponse.Identity> getIdentitiesList() {
-      if (identitiesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(identities_);
+    public boolean hasIdentity() {
+      return identityBuilder_ != null || identity_ != null;
+    }
+    /**
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
+     * @return The identity.
+     */
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity getIdentity() {
+      if (identityBuilder_ == null) {
+        return identity_ == null ? dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDefaultInstance() : identity_;
       } else {
-        return identitiesBuilder_.getMessageList();
+        return identityBuilder_.getMessage();
       }
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public int getIdentitiesCount() {
-      if (identitiesBuilder_ == null) {
-        return identities_.size();
-      } else {
-        return identitiesBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public dev.auth3.identity.admin.GetIdentitiesResponse.Identity getIdentities(int index) {
-      if (identitiesBuilder_ == null) {
-        return identities_.get(index);
-      } else {
-        return identitiesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public Builder setIdentities(
-        int index, dev.auth3.identity.admin.GetIdentitiesResponse.Identity value) {
-      if (identitiesBuilder_ == null) {
+    public Builder setIdentity(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity value) {
+      if (identityBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureIdentitiesIsMutable();
-        identities_.set(index, value);
+        identity_ = value;
         onChanged();
       } else {
-        identitiesBuilder_.setMessage(index, value);
+        identityBuilder_.setMessage(value);
       }
+
       return this;
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public Builder setIdentities(
-        int index, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder builderForValue) {
-      if (identitiesBuilder_ == null) {
-        ensureIdentitiesIsMutable();
-        identities_.set(index, builderForValue.build());
+    public Builder setIdentity(
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder builderForValue) {
+      if (identityBuilder_ == null) {
+        identity_ = builderForValue.build();
         onChanged();
       } else {
-        identitiesBuilder_.setMessage(index, builderForValue.build());
+        identityBuilder_.setMessage(builderForValue.build());
       }
+
       return this;
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public Builder addIdentities(dev.auth3.identity.admin.GetIdentitiesResponse.Identity value) {
-      if (identitiesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
+    public Builder mergeIdentity(dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity value) {
+      if (identityBuilder_ == null) {
+        if (identity_ != null) {
+          identity_ =
+            dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.newBuilder(identity_).mergeFrom(value).buildPartial();
+        } else {
+          identity_ = value;
         }
-        ensureIdentitiesIsMutable();
-        identities_.add(value);
         onChanged();
       } else {
-        identitiesBuilder_.addMessage(value);
+        identityBuilder_.mergeFrom(value);
       }
+
       return this;
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public Builder addIdentities(
-        int index, dev.auth3.identity.admin.GetIdentitiesResponse.Identity value) {
-      if (identitiesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIdentitiesIsMutable();
-        identities_.add(index, value);
+    public Builder clearIdentity() {
+      if (identityBuilder_ == null) {
+        identity_ = null;
         onChanged();
       } else {
-        identitiesBuilder_.addMessage(index, value);
+        identity_ = null;
+        identityBuilder_ = null;
       }
+
       return this;
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public Builder addIdentities(
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder builderForValue) {
-      if (identitiesBuilder_ == null) {
-        ensureIdentitiesIsMutable();
-        identities_.add(builderForValue.build());
-        onChanged();
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder getIdentityBuilder() {
+      
+      onChanged();
+      return getIdentityFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
+     */
+    public dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder getIdentityOrBuilder() {
+      if (identityBuilder_ != null) {
+        return identityBuilder_.getMessageOrBuilder();
       } else {
-        identitiesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public Builder addIdentities(
-        int index, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder builderForValue) {
-      if (identitiesBuilder_ == null) {
-        ensureIdentitiesIsMutable();
-        identities_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        identitiesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public Builder addAllIdentities(
-        java.lang.Iterable<? extends dev.auth3.identity.admin.GetIdentitiesResponse.Identity> values) {
-      if (identitiesBuilder_ == null) {
-        ensureIdentitiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, identities_);
-        onChanged();
-      } else {
-        identitiesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public Builder clearIdentities() {
-      if (identitiesBuilder_ == null) {
-        identities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        identitiesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public Builder removeIdentities(int index) {
-      if (identitiesBuilder_ == null) {
-        ensureIdentitiesIsMutable();
-        identities_.remove(index);
-        onChanged();
-      } else {
-        identitiesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder getIdentitiesBuilder(
-        int index) {
-      return getIdentitiesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder getIdentitiesOrBuilder(
-        int index) {
-      if (identitiesBuilder_ == null) {
-        return identities_.get(index);  } else {
-        return identitiesBuilder_.getMessageOrBuilder(index);
+        return identity_ == null ?
+            dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.getDefaultInstance() : identity_;
       }
     }
     /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];</code>
      */
-    public java.util.List<? extends dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder> 
-         getIdentitiesOrBuilderList() {
-      if (identitiesBuilder_ != null) {
-        return identitiesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(identities_);
-      }
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder addIdentitiesBuilder() {
-      return getIdentitiesFieldBuilder().addBuilder(
-          dev.auth3.identity.admin.GetIdentitiesResponse.Identity.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder addIdentitiesBuilder(
-        int index) {
-      return getIdentitiesFieldBuilder().addBuilder(
-          index, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];</code>
-     */
-    public java.util.List<dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder> 
-         getIdentitiesBuilderList() {
-      return getIdentitiesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        dev.auth3.identity.admin.GetIdentitiesResponse.Identity, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder> 
-        getIdentitiesFieldBuilder() {
-      if (identitiesBuilder_ == null) {
-        identitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            dev.auth3.identity.admin.GetIdentitiesResponse.Identity, dev.auth3.identity.admin.GetIdentitiesResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentitiesResponse.IdentityOrBuilder>(
-                identities_,
-                ((bitField0_ & 0x00000001) != 0),
+    private com.google.protobuf.SingleFieldBuilderV3<
+        dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder> 
+        getIdentityFieldBuilder() {
+      if (identityBuilder_ == null) {
+        identityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.Identity.Builder, dev.auth3.identity.admin.GetIdentityByIdentifierResponse.IdentityOrBuilder>(
+                getIdentity(),
                 getParentForChildren(),
                 isClean());
-        identities_ = null;
+        identity_ = null;
       }
-      return identitiesBuilder_;
-    }
-
-    private java.lang.Object nextPageToken_ = "";
-    /**
-     * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-     * @return The nextPageToken.
-     */
-    public java.lang.String getNextPageToken() {
-      java.lang.Object ref = nextPageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextPageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-     * @return The bytes for nextPageToken.
-     */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
-      java.lang.Object ref = nextPageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextPageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-     * @param value The nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageToken(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      nextPageToken_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNextPageToken() {
-      
-      nextPageToken_ = getDefaultInstance().getNextPageToken();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string next_page_token = 2[json_name = "nextPageToken"];</code>
-     * @param value The bytes for nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      nextPageToken_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int totalSize_ ;
-    /**
-     * <code>int32 total_size = 3[json_name = "totalSize"];</code>
-     * @return The totalSize.
-     */
-    @java.lang.Override
-    public int getTotalSize() {
-      return totalSize_;
-    }
-    /**
-     * <code>int32 total_size = 3[json_name = "totalSize"];</code>
-     * @param value The totalSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotalSize(int value) {
-      
-      totalSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 total_size = 3[json_name = "totalSize"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTotalSize() {
-      
-      totalSize_ = 0;
-      onChanged();
-      return this;
+      return identityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -2419,41 +2741,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
+    // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
-  private static final dev.auth3.identity.admin.GetIdentitiesResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  private static final dev.auth3.identity.admin.GetIdentityByIdentifierResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new dev.auth3.identity.admin.GetIdentitiesResponse();
+    DEFAULT_INSTANCE = new dev.auth3.identity.admin.GetIdentityByIdentifierResponse();
   }
 
-  public static dev.auth3.identity.admin.GetIdentitiesResponse getDefaultInstance() {
+  public static dev.auth3.identity.admin.GetIdentityByIdentifierResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetIdentitiesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetIdentitiesResponse>() {
+  private static final com.google.protobuf.Parser<GetIdentityByIdentifierResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GetIdentityByIdentifierResponse>() {
     @java.lang.Override
-    public GetIdentitiesResponse parsePartialFrom(
+    public GetIdentityByIdentifierResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetIdentitiesResponse(input, extensionRegistry);
+      return new GetIdentityByIdentifierResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetIdentitiesResponse> parser() {
+  public static com.google.protobuf.Parser<GetIdentityByIdentifierResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetIdentitiesResponse> getParserForType() {
+  public com.google.protobuf.Parser<GetIdentityByIdentifierResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public dev.auth3.identity.admin.GetIdentitiesResponse getDefaultInstanceForType() {
+  public dev.auth3.identity.admin.GetIdentityByIdentifierResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
