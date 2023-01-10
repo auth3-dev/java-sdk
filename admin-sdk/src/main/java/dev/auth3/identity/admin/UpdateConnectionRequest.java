@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateConnectionRequest() {
-    name_ = "";
     clientId_ = "";
     clientSecret_ = "";
     buttonImageUrl_ = "";
@@ -59,12 +58,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -841,44 +834,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.Types)
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int CLIENT_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object clientId_;
   /**
@@ -1194,9 +1149,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
     if (!getClientIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
     }
@@ -1233,9 +1185,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
     if (!getClientIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
     }
@@ -1285,8 +1234,6 @@ private static final long serialVersionUID = 0L;
     }
     dev.auth3.identity.admin.UpdateConnectionRequest other = (dev.auth3.identity.admin.UpdateConnectionRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
     if (!getClientId()
         .equals(other.getClientId())) return false;
     if (!getClientSecret()
@@ -1314,8 +1261,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getClientId().hashCode();
     hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
@@ -1469,8 +1414,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       clientId_ = "";
 
       clientSecret_ = "";
@@ -1516,7 +1459,6 @@ private static final long serialVersionUID = 0L;
     public dev.auth3.identity.admin.UpdateConnectionRequest buildPartial() {
       dev.auth3.identity.admin.UpdateConnectionRequest result = new dev.auth3.identity.admin.UpdateConnectionRequest(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
       result.clientId_ = clientId_;
       result.clientSecret_ = clientSecret_;
       result.buttonImageUrl_ = buttonImageUrl_;
@@ -1578,10 +1520,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(dev.auth3.identity.admin.UpdateConnectionRequest other) {
       if (other == dev.auth3.identity.admin.UpdateConnectionRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (!other.getClientId().isEmpty()) {
         clientId_ = other.clientId_;
         onChanged();
@@ -1651,82 +1589,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
-
-    private java.lang.Object name_ = "";
-    /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
 
     private java.lang.Object clientId_ = "";
     /**
