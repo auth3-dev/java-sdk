@@ -8,14 +8,14 @@ public interface CreateConnectionResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The name.
+   * <code>string id = 1[json_name = "id"];</code>
+   * @return The id.
    */
-  java.lang.String getName();
+  java.lang.String getId();
   /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string id = 1[json_name = "id"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getIdBytes();
 }

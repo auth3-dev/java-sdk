@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateConnectionRequest() {
-    name_ = "";
+    id_ = "";
     clientId_ = "";
     clientSecret_ = "";
     buttonImageUrl_ = "";
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            id_ = s;
             break;
           }
           case 18: {
@@ -834,38 +834,38 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.Types)
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
   /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The name.
+   * <code>string id = 1[json_name = "id"];</code>
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      id_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1[json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string id = 1[json_name = "id"];</code>
+   * @return The bytes for id.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      id_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1149,8 +1149,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (!getClientIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
@@ -1185,8 +1185,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (!getClientIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
@@ -1234,8 +1234,8 @@ private static final long serialVersionUID = 0L;
     }
     dev.auth3.identity.admin.CreateConnectionRequest other = (dev.auth3.identity.admin.CreateConnectionRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!getClientId()
         .equals(other.getClientId())) return false;
     if (!getClientSecret()
@@ -1261,8 +1261,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getClientId().hashCode();
     hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
@@ -1414,7 +1414,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      id_ = "";
 
       clientId_ = "";
 
@@ -1459,7 +1459,7 @@ private static final long serialVersionUID = 0L;
     public dev.auth3.identity.admin.CreateConnectionRequest buildPartial() {
       dev.auth3.identity.admin.CreateConnectionRequest result = new dev.auth3.identity.admin.CreateConnectionRequest(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      result.id_ = id_;
       result.clientId_ = clientId_;
       result.clientSecret_ = clientSecret_;
       result.buttonImageUrl_ = buttonImageUrl_;
@@ -1520,8 +1520,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(dev.auth3.identity.admin.CreateConnectionRequest other) {
       if (other == dev.auth3.identity.admin.CreateConnectionRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
       if (!other.getClientId().isEmpty()) {
@@ -1590,78 +1590,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object id_ = "";
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The id.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        id_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @param value The name to set.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
+     * <code>string id = 1[json_name = "id"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearId() {
       
-      name_ = getDefaultInstance().getName();
+      id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @param value The bytes for name to set.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      id_ = value;
       onChanged();
       return this;
     }

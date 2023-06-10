@@ -900,16 +900,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The id.
      */
-    java.lang.String getName();
+    java.lang.String getId();
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getIdBytes();
 
     /**
      * <code>string client_id = 2[json_name = "clientId"];</code>
@@ -1007,36 +1007,24 @@ private static final long serialVersionUID = 0L;
     dev.auth3.identity.admin.GetConnectionsResponse.Types getType();
 
     /**
-     * <code>string id = 10[json_name = "id"];</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 10[json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>string scopes = 11[json_name = "scopes"];</code>
+     * <code>string scopes = 10[json_name = "scopes"];</code>
      * @return The scopes.
      */
     java.lang.String getScopes();
     /**
-     * <code>string scopes = 11[json_name = "scopes"];</code>
+     * <code>string scopes = 10[json_name = "scopes"];</code>
      * @return The bytes for scopes.
      */
     com.google.protobuf.ByteString
         getScopesBytes();
 
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
      * @return The enum numeric value on the wire for purpose.
      */
     int getPurposeValue();
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
      * @return The purpose.
      */
     dev.auth3.identity.admin.GetConnectionsResponse.Purposes getPurpose();
@@ -1054,7 +1042,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Connection() {
-      name_ = "";
+      id_ = "";
       clientId_ = "";
       clientSecret_ = "";
       buttonImageUrl_ = "";
@@ -1062,7 +1050,6 @@ private static final long serialVersionUID = 0L;
       oidcDiscoveryUrl_ = "";
       mfa_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       type_ = 0;
-      id_ = "";
       scopes_ = "";
       purpose_ = 0;
     }
@@ -1101,7 +1088,7 @@ private static final long serialVersionUID = 0L;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              id_ = s;
               break;
             }
             case 18: {
@@ -1152,16 +1139,10 @@ private static final long serialVersionUID = 0L;
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               scopes_ = s;
               break;
             }
-            case 96: {
+            case 88: {
               int rawValue = input.readEnum();
 
               purpose_ = rawValue;
@@ -1202,38 +1183,38 @@ private static final long serialVersionUID = 0L;
               dev.auth3.identity.admin.GetConnectionsResponse.Connection.class, dev.auth3.identity.admin.GetConnectionsResponse.Connection.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string id = 1[json_name = "id"];</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1465,48 +1446,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? dev.auth3.identity.admin.GetConnectionsResponse.Types.UNRECOGNIZED : result;
     }
 
-    public static final int ID_FIELD_NUMBER = 10;
-    private volatile java.lang.Object id_;
-    /**
-     * <code>string id = 10[json_name = "id"];</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 10[json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCOPES_FIELD_NUMBER = 11;
+    public static final int SCOPES_FIELD_NUMBER = 10;
     private volatile java.lang.Object scopes_;
     /**
-     * <code>string scopes = 11[json_name = "scopes"];</code>
+     * <code>string scopes = 10[json_name = "scopes"];</code>
      * @return The scopes.
      */
     @java.lang.Override
@@ -1523,7 +1466,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string scopes = 11[json_name = "scopes"];</code>
+     * <code>string scopes = 10[json_name = "scopes"];</code>
      * @return The bytes for scopes.
      */
     @java.lang.Override
@@ -1541,17 +1484,17 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static final int PURPOSE_FIELD_NUMBER = 12;
+    public static final int PURPOSE_FIELD_NUMBER = 11;
     private int purpose_;
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
      * @return The enum numeric value on the wire for purpose.
      */
     @java.lang.Override public int getPurposeValue() {
       return purpose_;
     }
     /**
-     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+     * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
      * @return The purpose.
      */
     @java.lang.Override public dev.auth3.identity.admin.GetConnectionsResponse.Purposes getPurpose() {
@@ -1574,8 +1517,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getClientIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
@@ -1598,14 +1541,11 @@ private static final long serialVersionUID = 0L;
       if (type_ != dev.auth3.identity.admin.GetConnectionsResponse.Types.UNSET.getNumber()) {
         output.writeEnum(9, type_);
       }
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
-      }
       if (!getScopesBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, scopes_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, scopes_);
       }
       if (purpose_ != dev.auth3.identity.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN.getNumber()) {
-        output.writeEnum(12, purpose_);
+        output.writeEnum(11, purpose_);
       }
       unknownFields.writeTo(output);
     }
@@ -1616,8 +1556,8 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getClientIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
@@ -1647,15 +1587,12 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, type_);
       }
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
-      }
       if (!getScopesBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, scopes_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, scopes_);
       }
       if (purpose_ != dev.auth3.identity.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, purpose_);
+          .computeEnumSize(11, purpose_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1672,8 +1609,8 @@ private static final long serialVersionUID = 0L;
       }
       dev.auth3.identity.admin.GetConnectionsResponse.Connection other = (dev.auth3.identity.admin.GetConnectionsResponse.Connection) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getClientId()
           .equals(other.getClientId())) return false;
       if (!getClientSecret()
@@ -1686,8 +1623,6 @@ private static final long serialVersionUID = 0L;
       if (!getMfaList()
           .equals(other.getMfaList())) return false;
       if (type_ != other.type_) return false;
-      if (!getId()
-          .equals(other.getId())) return false;
       if (!getScopes()
           .equals(other.getScopes())) return false;
       if (purpose_ != other.purpose_) return false;
@@ -1702,8 +1637,8 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClientId().hashCode();
       hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
@@ -1720,8 +1655,6 @@ private static final long serialVersionUID = 0L;
       }
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopes().hashCode();
       hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
@@ -1859,7 +1792,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        id_ = "";
 
         clientId_ = "";
 
@@ -1874,8 +1807,6 @@ private static final long serialVersionUID = 0L;
         mfa_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
-
-        id_ = "";
 
         scopes_ = "";
 
@@ -1908,7 +1839,7 @@ private static final long serialVersionUID = 0L;
       public dev.auth3.identity.admin.GetConnectionsResponse.Connection buildPartial() {
         dev.auth3.identity.admin.GetConnectionsResponse.Connection result = new dev.auth3.identity.admin.GetConnectionsResponse.Connection(this);
         int from_bitField0_ = bitField0_;
-        result.name_ = name_;
+        result.id_ = id_;
         result.clientId_ = clientId_;
         result.clientSecret_ = clientSecret_;
         result.buttonImageUrl_ = buttonImageUrl_;
@@ -1920,7 +1851,6 @@ private static final long serialVersionUID = 0L;
         }
         result.mfa_ = mfa_;
         result.type_ = type_;
-        result.id_ = id_;
         result.scopes_ = scopes_;
         result.purpose_ = purpose_;
         onBuilt();
@@ -1971,8 +1901,8 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(dev.auth3.identity.admin.GetConnectionsResponse.Connection other) {
         if (other == dev.auth3.identity.admin.GetConnectionsResponse.Connection.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (!other.getClientId().isEmpty()) {
@@ -2006,10 +1936,6 @@ private static final long serialVersionUID = 0L;
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
-        }
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
         }
         if (!other.getScopes().isEmpty()) {
           scopes_ = other.scopes_;
@@ -2048,78 +1974,78 @@ private static final long serialVersionUID = 0L;
       }
       private int bitField0_;
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object id_ = "";
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @return The name.
+       * <code>string id = 1[json_name = "id"];</code>
+       * @return The id.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string id = 1[json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string id = 1[json_name = "id"];</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string id = 1[json_name = "id"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearId() {
         
-        name_ = getDefaultInstance().getName();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string id = 1[json_name = "id"];</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -2646,85 +2572,9 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 10[json_name = "id"];</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 10[json_name = "id"];</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 10[json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 10[json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 10[json_name = "id"];</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object scopes_ = "";
       /**
-       * <code>string scopes = 11[json_name = "scopes"];</code>
+       * <code>string scopes = 10[json_name = "scopes"];</code>
        * @return The scopes.
        */
       public java.lang.String getScopes() {
@@ -2740,7 +2590,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string scopes = 11[json_name = "scopes"];</code>
+       * <code>string scopes = 10[json_name = "scopes"];</code>
        * @return The bytes for scopes.
        */
       public com.google.protobuf.ByteString
@@ -2757,7 +2607,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string scopes = 11[json_name = "scopes"];</code>
+       * <code>string scopes = 10[json_name = "scopes"];</code>
        * @param value The scopes to set.
        * @return This builder for chaining.
        */
@@ -2772,7 +2622,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string scopes = 11[json_name = "scopes"];</code>
+       * <code>string scopes = 10[json_name = "scopes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearScopes() {
@@ -2782,7 +2632,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string scopes = 11[json_name = "scopes"];</code>
+       * <code>string scopes = 10[json_name = "scopes"];</code>
        * @param value The bytes for scopes to set.
        * @return This builder for chaining.
        */
@@ -2800,14 +2650,14 @@ private static final long serialVersionUID = 0L;
 
       private int purpose_ = 0;
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
        * @return The enum numeric value on the wire for purpose.
        */
       @java.lang.Override public int getPurposeValue() {
         return purpose_;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
        * @param value The enum numeric value on the wire for purpose to set.
        * @return This builder for chaining.
        */
@@ -2818,7 +2668,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
        * @return The purpose.
        */
       @java.lang.Override
@@ -2828,7 +2678,7 @@ private static final long serialVersionUID = 0L;
         return result == null ? dev.auth3.identity.admin.GetConnectionsResponse.Purposes.UNRECOGNIZED : result;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
        * @param value The purpose to set.
        * @return This builder for chaining.
        */
@@ -2842,7 +2692,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];</code>
+       * <code>.depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPurpose() {

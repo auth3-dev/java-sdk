@@ -62,16 +62,16 @@ public interface GetIdentityResponseOrBuilder extends
       getMainIdentifierBytes();
 
   /**
-   * <code>string traits_id = 5[json_name = "traitsId"];</code>
-   * @return The traitsId.
+   * <code>string profile_id = 5[json_name = "profileId"];</code>
+   * @return The profileId.
    */
-  java.lang.String getTraitsId();
+  java.lang.String getProfileId();
   /**
-   * <code>string traits_id = 5[json_name = "traitsId"];</code>
-   * @return The bytes for traitsId.
+   * <code>string profile_id = 5[json_name = "profileId"];</code>
+   * @return The bytes for profileId.
    */
   com.google.protobuf.ByteString
-      getTraitsIdBytes();
+      getProfileIdBytes();
 
   /**
    * <code>repeated string addresses_ids = 6[json_name = "addressesIds"];</code>

@@ -325,66 +325,66 @@ public final class AdminGrpc {
     return getUpdateAddressMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetTraitsRequest,
-      dev.auth3.identity.admin.GetTraitsResponse> getGetTraitsMethod;
+  private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetProfileRequest,
+      dev.auth3.identity.admin.GetProfileResponse> getGetProfileMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetTraits",
-      requestType = dev.auth3.identity.admin.GetTraitsRequest.class,
-      responseType = dev.auth3.identity.admin.GetTraitsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetProfile",
+      requestType = dev.auth3.identity.admin.GetProfileRequest.class,
+      responseType = dev.auth3.identity.admin.GetProfileResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetTraitsRequest,
-      dev.auth3.identity.admin.GetTraitsResponse> getGetTraitsMethod() {
-    io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetTraitsRequest, dev.auth3.identity.admin.GetTraitsResponse> getGetTraitsMethod;
-    if ((getGetTraitsMethod = AdminGrpc.getGetTraitsMethod) == null) {
+  public static io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetProfileRequest,
+      dev.auth3.identity.admin.GetProfileResponse> getGetProfileMethod() {
+    io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetProfileRequest, dev.auth3.identity.admin.GetProfileResponse> getGetProfileMethod;
+    if ((getGetProfileMethod = AdminGrpc.getGetProfileMethod) == null) {
       synchronized (AdminGrpc.class) {
-        if ((getGetTraitsMethod = AdminGrpc.getGetTraitsMethod) == null) {
-          AdminGrpc.getGetTraitsMethod = getGetTraitsMethod =
-              io.grpc.MethodDescriptor.<dev.auth3.identity.admin.GetTraitsRequest, dev.auth3.identity.admin.GetTraitsResponse>newBuilder()
+        if ((getGetProfileMethod = AdminGrpc.getGetProfileMethod) == null) {
+          AdminGrpc.getGetProfileMethod = getGetProfileMethod =
+              io.grpc.MethodDescriptor.<dev.auth3.identity.admin.GetProfileRequest, dev.auth3.identity.admin.GetProfileResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTraits"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProfile"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  dev.auth3.identity.admin.GetTraitsRequest.getDefaultInstance()))
+                  dev.auth3.identity.admin.GetProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  dev.auth3.identity.admin.GetTraitsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AdminMethodDescriptorSupplier("GetTraits"))
+                  dev.auth3.identity.admin.GetProfileResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AdminMethodDescriptorSupplier("GetProfile"))
               .build();
         }
       }
     }
-    return getGetTraitsMethod;
+    return getGetProfileMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateTraitsRequest,
-      dev.auth3.identity.admin.UpdateTraitsResponse> getUpdateTraitsMethod;
+  private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateProfileRequest,
+      dev.auth3.identity.admin.UpdateProfileResponse> getUpdateProfileMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateTraits",
-      requestType = dev.auth3.identity.admin.UpdateTraitsRequest.class,
-      responseType = dev.auth3.identity.admin.UpdateTraitsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProfile",
+      requestType = dev.auth3.identity.admin.UpdateProfileRequest.class,
+      responseType = dev.auth3.identity.admin.UpdateProfileResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateTraitsRequest,
-      dev.auth3.identity.admin.UpdateTraitsResponse> getUpdateTraitsMethod() {
-    io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateTraitsRequest, dev.auth3.identity.admin.UpdateTraitsResponse> getUpdateTraitsMethod;
-    if ((getUpdateTraitsMethod = AdminGrpc.getUpdateTraitsMethod) == null) {
+  public static io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateProfileRequest,
+      dev.auth3.identity.admin.UpdateProfileResponse> getUpdateProfileMethod() {
+    io.grpc.MethodDescriptor<dev.auth3.identity.admin.UpdateProfileRequest, dev.auth3.identity.admin.UpdateProfileResponse> getUpdateProfileMethod;
+    if ((getUpdateProfileMethod = AdminGrpc.getUpdateProfileMethod) == null) {
       synchronized (AdminGrpc.class) {
-        if ((getUpdateTraitsMethod = AdminGrpc.getUpdateTraitsMethod) == null) {
-          AdminGrpc.getUpdateTraitsMethod = getUpdateTraitsMethod =
-              io.grpc.MethodDescriptor.<dev.auth3.identity.admin.UpdateTraitsRequest, dev.auth3.identity.admin.UpdateTraitsResponse>newBuilder()
+        if ((getUpdateProfileMethod = AdminGrpc.getUpdateProfileMethod) == null) {
+          AdminGrpc.getUpdateProfileMethod = getUpdateProfileMethod =
+              io.grpc.MethodDescriptor.<dev.auth3.identity.admin.UpdateProfileRequest, dev.auth3.identity.admin.UpdateProfileResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTraits"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateProfile"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  dev.auth3.identity.admin.UpdateTraitsRequest.getDefaultInstance()))
+                  dev.auth3.identity.admin.UpdateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  dev.auth3.identity.admin.UpdateTraitsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AdminMethodDescriptorSupplier("UpdateTraits"))
+                  dev.auth3.identity.admin.UpdateProfileResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AdminMethodDescriptorSupplier("UpdateProfile"))
               .build();
         }
       }
     }
-    return getUpdateTraitsMethod;
+    return getUpdateProfileMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<dev.auth3.identity.admin.GetCredentialsRequest,
@@ -1158,16 +1158,16 @@ public final class AdminGrpc {
 
     /**
      */
-    public void getTraits(dev.auth3.identity.admin.GetTraitsRequest request,
-        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetTraitsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTraitsMethod(), responseObserver);
+    public void getProfile(dev.auth3.identity.admin.GetProfileRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetProfileResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProfileMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateTraits(dev.auth3.identity.admin.UpdateTraitsRequest request,
-        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateTraitsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTraitsMethod(), responseObserver);
+    public void updateProfile(dev.auth3.identity.admin.UpdateProfileRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateProfileResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateProfileMethod(), responseObserver);
     }
 
     /**
@@ -1390,19 +1390,19 @@ public final class AdminGrpc {
                 dev.auth3.identity.admin.UpdateAddressResponse>(
                   this, METHODID_UPDATE_ADDRESS)))
           .addMethod(
-            getGetTraitsMethod(),
+            getGetProfileMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                dev.auth3.identity.admin.GetTraitsRequest,
-                dev.auth3.identity.admin.GetTraitsResponse>(
-                  this, METHODID_GET_TRAITS)))
+                dev.auth3.identity.admin.GetProfileRequest,
+                dev.auth3.identity.admin.GetProfileResponse>(
+                  this, METHODID_GET_PROFILE)))
           .addMethod(
-            getUpdateTraitsMethod(),
+            getUpdateProfileMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                dev.auth3.identity.admin.UpdateTraitsRequest,
-                dev.auth3.identity.admin.UpdateTraitsResponse>(
-                  this, METHODID_UPDATE_TRAITS)))
+                dev.auth3.identity.admin.UpdateProfileRequest,
+                dev.auth3.identity.admin.UpdateProfileResponse>(
+                  this, METHODID_UPDATE_PROFILE)))
           .addMethod(
             getGetCredentialsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1650,18 +1650,18 @@ public final class AdminGrpc {
 
     /**
      */
-    public void getTraits(dev.auth3.identity.admin.GetTraitsRequest request,
-        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetTraitsResponse> responseObserver) {
+    public void getProfile(dev.auth3.identity.admin.GetProfileRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetProfileResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetTraitsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateTraits(dev.auth3.identity.admin.UpdateTraitsRequest request,
-        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateTraitsResponse> responseObserver) {
+    public void updateProfile(dev.auth3.identity.admin.UpdateProfileRequest request,
+        io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateProfileResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateTraitsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateProfileMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1919,16 +1919,16 @@ public final class AdminGrpc {
 
     /**
      */
-    public dev.auth3.identity.admin.GetTraitsResponse getTraits(dev.auth3.identity.admin.GetTraitsRequest request) {
+    public dev.auth3.identity.admin.GetProfileResponse getProfile(dev.auth3.identity.admin.GetProfileRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTraitsMethod(), getCallOptions(), request);
+          getChannel(), getGetProfileMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public dev.auth3.identity.admin.UpdateTraitsResponse updateTraits(dev.auth3.identity.admin.UpdateTraitsRequest request) {
+    public dev.auth3.identity.admin.UpdateProfileResponse updateProfile(dev.auth3.identity.admin.UpdateProfileRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateTraitsMethod(), getCallOptions(), request);
+          getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2175,18 +2175,18 @@ public final class AdminGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<dev.auth3.identity.admin.GetTraitsResponse> getTraits(
-        dev.auth3.identity.admin.GetTraitsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<dev.auth3.identity.admin.GetProfileResponse> getProfile(
+        dev.auth3.identity.admin.GetProfileRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetTraitsMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetProfileMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<dev.auth3.identity.admin.UpdateTraitsResponse> updateTraits(
-        dev.auth3.identity.admin.UpdateTraitsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<dev.auth3.identity.admin.UpdateProfileResponse> updateProfile(
+        dev.auth3.identity.admin.UpdateProfileRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateTraitsMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateProfileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2368,8 +2368,8 @@ public final class AdminGrpc {
   private static final int METHODID_GET_ADDRESSES = 7;
   private static final int METHODID_GET_ADDRESS = 8;
   private static final int METHODID_UPDATE_ADDRESS = 9;
-  private static final int METHODID_GET_TRAITS = 10;
-  private static final int METHODID_UPDATE_TRAITS = 11;
+  private static final int METHODID_GET_PROFILE = 10;
+  private static final int METHODID_UPDATE_PROFILE = 11;
   private static final int METHODID_GET_CREDENTIALS = 12;
   private static final int METHODID_UPDATE_CREDENTIAL = 13;
   private static final int METHODID_GET_IDENTITY_LOGIN_ATTEMPTS = 14;
@@ -2449,13 +2449,13 @@ public final class AdminGrpc {
           serviceImpl.updateAddress((dev.auth3.identity.admin.UpdateAddressRequest) request,
               (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateAddressResponse>) responseObserver);
           break;
-        case METHODID_GET_TRAITS:
-          serviceImpl.getTraits((dev.auth3.identity.admin.GetTraitsRequest) request,
-              (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetTraitsResponse>) responseObserver);
+        case METHODID_GET_PROFILE:
+          serviceImpl.getProfile((dev.auth3.identity.admin.GetProfileRequest) request,
+              (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.GetProfileResponse>) responseObserver);
           break;
-        case METHODID_UPDATE_TRAITS:
-          serviceImpl.updateTraits((dev.auth3.identity.admin.UpdateTraitsRequest) request,
-              (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateTraitsResponse>) responseObserver);
+        case METHODID_UPDATE_PROFILE:
+          serviceImpl.updateProfile((dev.auth3.identity.admin.UpdateProfileRequest) request,
+              (io.grpc.stub.StreamObserver<dev.auth3.identity.admin.UpdateProfileResponse>) responseObserver);
           break;
         case METHODID_GET_CREDENTIALS:
           serviceImpl.getCredentials((dev.auth3.identity.admin.GetCredentialsRequest) request,
@@ -2612,8 +2612,8 @@ public final class AdminGrpc {
               .addMethod(getGetAddressesMethod())
               .addMethod(getGetAddressMethod())
               .addMethod(getUpdateAddressMethod())
-              .addMethod(getGetTraitsMethod())
-              .addMethod(getUpdateTraitsMethod())
+              .addMethod(getGetProfileMethod())
+              .addMethod(getUpdateProfileMethod())
               .addMethod(getGetCredentialsMethod())
               .addMethod(getUpdateCredentialMethod())
               .addMethod(getGetIdentityLoginAttemptsMethod())

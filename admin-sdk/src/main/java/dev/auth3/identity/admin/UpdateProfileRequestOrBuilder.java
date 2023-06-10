@@ -3,8 +3,8 @@
 
 package dev.auth3.identity.admin;
 
-public interface UpdateTraitsRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
+public interface UpdateProfileRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,14 +20,14 @@ public interface UpdateTraitsRequestOrBuilder extends
       getIdentityIdBytes();
 
   /**
-   * <code>string traits = 2[json_name = "traits"];</code>
-   * @return The traits.
+   * <code>string profile = 2[json_name = "profile"];</code>
+   * @return The profile.
    */
-  java.lang.String getTraits();
+  java.lang.String getProfile();
   /**
-   * <code>string traits = 2[json_name = "traits"];</code>
-   * @return The bytes for traits.
+   * <code>string profile = 2[json_name = "profile"];</code>
+   * @return The bytes for profile.
    */
   com.google.protobuf.ByteString
-      getTraitsBytes();
+      getProfileBytes();
 }

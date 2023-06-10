@@ -171,16 +171,16 @@ private static final long serialVersionUID = 0L;
     int getType();
 
     /**
-     * <code>string name = 6[json_name = "name"];</code>
-     * @return The name.
+     * <code>string connection_id = 6[json_name = "connectionId"];</code>
+     * @return The connectionId.
      */
-    java.lang.String getName();
+    java.lang.String getConnectionId();
     /**
-     * <code>string name = 6[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string connection_id = 6[json_name = "connectionId"];</code>
+     * @return The bytes for connectionId.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getConnectionIdBytes();
 
     /**
      * <code>bool configured = 7[json_name = "configured"];</code>
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
     private Credential() {
       credentialId_ = "";
       identityId_ = "";
-      name_ = "";
+      connectionId_ = "";
     }
 
     @java.lang.Override
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              connectionId_ = s;
               break;
             }
             case 56: {
@@ -461,38 +461,38 @@ private static final long serialVersionUID = 0L;
       return type_;
     }
 
-    public static final int NAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object name_;
+    public static final int CONNECTION_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object connectionId_;
     /**
-     * <code>string name = 6[json_name = "name"];</code>
-     * @return The name.
+     * <code>string connection_id = 6[json_name = "connectionId"];</code>
+     * @return The connectionId.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getConnectionId() {
+      java.lang.Object ref = connectionId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        connectionId_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 6[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string connection_id = 6[json_name = "connectionId"];</code>
+     * @return The bytes for connectionId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getConnectionIdBytes() {
+      java.lang.Object ref = connectionId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        connectionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -539,8 +539,8 @@ private static final long serialVersionUID = 0L;
       if (type_ != 0) {
         output.writeInt32(5, type_);
       }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+      if (!getConnectionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, connectionId_);
       }
       if (configured_ != false) {
         output.writeBool(7, configured_);
@@ -572,8 +572,8 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, type_);
       }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+      if (!getConnectionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, connectionId_);
       }
       if (configured_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -610,8 +610,8 @@ private static final long serialVersionUID = 0L;
           .equals(other.getIdentityId())) return false;
       if (getType()
           != other.getType()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getConnectionId()
+          .equals(other.getConnectionId())) return false;
       if (getConfigured()
           != other.getConfigured()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -639,8 +639,8 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getIdentityId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionId().hashCode();
       hash = (37 * hash) + CONFIGURED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getConfigured());
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
 
         type_ = 0;
 
-        name_ = "";
+        connectionId_ = "";
 
         configured_ = false;
 
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
         }
         result.identityId_ = identityId_;
         result.type_ = type_;
-        result.name_ = name_;
+        result.connectionId_ = connectionId_;
         result.configured_ = configured_;
         onBuilt();
         return result;
@@ -905,8 +905,8 @@ private static final long serialVersionUID = 0L;
         if (other.getType() != 0) {
           setType(other.getType());
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getConnectionId().isEmpty()) {
+          connectionId_ = other.connectionId_;
           onChanged();
         }
         if (other.getConfigured() != false) {
@@ -1362,78 +1362,78 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object connectionId_ = "";
       /**
-       * <code>string name = 6[json_name = "name"];</code>
-       * @return The name.
+       * <code>string connection_id = 6[json_name = "connectionId"];</code>
+       * @return The connectionId.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getConnectionId() {
+        java.lang.Object ref = connectionId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          connectionId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 6[json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string connection_id = 6[json_name = "connectionId"];</code>
+       * @return The bytes for connectionId.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getConnectionIdBytes() {
+        java.lang.Object ref = connectionId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          connectionId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 6[json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string connection_id = 6[json_name = "connectionId"];</code>
+       * @param value The connectionId to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setConnectionId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        connectionId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 6[json_name = "name"];</code>
+       * <code>string connection_id = 6[json_name = "connectionId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearConnectionId() {
         
-        name_ = getDefaultInstance().getName();
+        connectionId_ = getDefaultInstance().getConnectionId();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 6[json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string connection_id = 6[json_name = "connectionId"];</code>
+       * @param value The bytes for connectionId to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setConnectionIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        connectionId_ = value;
         onChanged();
         return this;
       }

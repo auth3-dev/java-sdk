@@ -3,7 +3,7 @@
 
 package dev.auth3.identity.admin;
 
-public interface UpdateTraitsResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse)
+public interface UpdateProfileResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.UpdateProfileResponse)
     com.google.protobuf.MessageOrBuilder {
 }

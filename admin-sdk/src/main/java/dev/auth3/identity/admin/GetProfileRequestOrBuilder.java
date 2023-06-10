@@ -3,8 +3,8 @@
 
 package dev.auth3.identity.admin;
 
-public interface GetTraitsRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.GetTraitsRequest)
+public interface GetProfileRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:depot.devtools.auth.v0.identity.admin.GetProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

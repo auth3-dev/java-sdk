@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private GetIdentityResponse() {
     identityId_ = "";
     mainIdentifier_ = "";
-    traitsId_ = "";
+    profileId_ = "";
     addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     schemaId_ = "";
     lock_ = 0;
@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            traitsId_ = s;
+            profileId_ = s;
             break;
           }
           case 50: {
@@ -416,38 +416,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRAITS_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object traitsId_;
+  public static final int PROFILE_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object profileId_;
   /**
-   * <code>string traits_id = 5[json_name = "traitsId"];</code>
-   * @return The traitsId.
+   * <code>string profile_id = 5[json_name = "profileId"];</code>
+   * @return The profileId.
    */
   @java.lang.Override
-  public java.lang.String getTraitsId() {
-    java.lang.Object ref = traitsId_;
+  public java.lang.String getProfileId() {
+    java.lang.Object ref = profileId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      traitsId_ = s;
+      profileId_ = s;
       return s;
     }
   }
   /**
-   * <code>string traits_id = 5[json_name = "traitsId"];</code>
-   * @return The bytes for traitsId.
+   * <code>string profile_id = 5[json_name = "profileId"];</code>
+   * @return The bytes for profileId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTraitsIdBytes() {
-    java.lang.Object ref = traitsId_;
+      getProfileIdBytes() {
+    java.lang.Object ref = profileId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      traitsId_ = b;
+      profileId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -653,8 +653,8 @@ private static final long serialVersionUID = 0L;
     if (!getMainIdentifierBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mainIdentifier_);
     }
-    if (!getTraitsIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, traitsId_);
+    if (!getProfileIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, profileId_);
     }
     for (int i = 0; i < addressesIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, addressesIds_.getRaw(i));
@@ -694,8 +694,8 @@ private static final long serialVersionUID = 0L;
     if (!getMainIdentifierBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mainIdentifier_);
     }
-    if (!getTraitsIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, traitsId_);
+    if (!getProfileIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, profileId_);
     }
     {
       int dataSize = 0;
@@ -751,8 +751,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMainIdentifier()
         .equals(other.getMainIdentifier())) return false;
-    if (!getTraitsId()
-        .equals(other.getTraitsId())) return false;
+    if (!getProfileId()
+        .equals(other.getProfileId())) return false;
     if (!getAddressesIdsList()
         .equals(other.getAddressesIdsList())) return false;
     if (!internalGetCredentialsIds().equals(
@@ -783,8 +783,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MAIN_IDENTIFIER_FIELD_NUMBER;
     hash = (53 * hash) + getMainIdentifier().hashCode();
-    hash = (37 * hash) + TRAITS_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTraitsId().hashCode();
+    hash = (37 * hash) + PROFILE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getProfileId().hashCode();
     if (getAddressesIdsCount() > 0) {
       hash = (37 * hash) + ADDRESSES_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getAddressesIdsList().hashCode();
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
       }
       mainIdentifier_ = "";
 
-      traitsId_ = "";
+      profileId_ = "";
 
       addressesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
         result.updatedAt_ = updatedAtBuilder_.build();
       }
       result.mainIdentifier_ = mainIdentifier_;
-      result.traitsId_ = traitsId_;
+      result.profileId_ = profileId_;
       if (((bitField0_ & 0x00000001) != 0)) {
         addressesIds_ = addressesIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1088,8 +1088,8 @@ private static final long serialVersionUID = 0L;
         mainIdentifier_ = other.mainIdentifier_;
         onChanged();
       }
-      if (!other.getTraitsId().isEmpty()) {
-        traitsId_ = other.traitsId_;
+      if (!other.getProfileId().isEmpty()) {
+        profileId_ = other.profileId_;
         onChanged();
       }
       if (!other.addressesIds_.isEmpty()) {
@@ -1531,78 +1531,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object traitsId_ = "";
+    private java.lang.Object profileId_ = "";
     /**
-     * <code>string traits_id = 5[json_name = "traitsId"];</code>
-     * @return The traitsId.
+     * <code>string profile_id = 5[json_name = "profileId"];</code>
+     * @return The profileId.
      */
-    public java.lang.String getTraitsId() {
-      java.lang.Object ref = traitsId_;
+    public java.lang.String getProfileId() {
+      java.lang.Object ref = profileId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        traitsId_ = s;
+        profileId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string traits_id = 5[json_name = "traitsId"];</code>
-     * @return The bytes for traitsId.
+     * <code>string profile_id = 5[json_name = "profileId"];</code>
+     * @return The bytes for profileId.
      */
     public com.google.protobuf.ByteString
-        getTraitsIdBytes() {
-      java.lang.Object ref = traitsId_;
+        getProfileIdBytes() {
+      java.lang.Object ref = profileId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        traitsId_ = b;
+        profileId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string traits_id = 5[json_name = "traitsId"];</code>
-     * @param value The traitsId to set.
+     * <code>string profile_id = 5[json_name = "profileId"];</code>
+     * @param value The profileId to set.
      * @return This builder for chaining.
      */
-    public Builder setTraitsId(
+    public Builder setProfileId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      traitsId_ = value;
+      profileId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string traits_id = 5[json_name = "traitsId"];</code>
+     * <code>string profile_id = 5[json_name = "profileId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTraitsId() {
+    public Builder clearProfileId() {
       
-      traitsId_ = getDefaultInstance().getTraitsId();
+      profileId_ = getDefaultInstance().getProfileId();
       onChanged();
       return this;
     }
     /**
-     * <code>string traits_id = 5[json_name = "traitsId"];</code>
-     * @param value The bytes for traitsId to set.
+     * <code>string profile_id = 5[json_name = "profileId"];</code>
+     * @param value The bytes for profileId to set.
      * @return This builder for chaining.
      */
-    public Builder setTraitsIdBytes(
+    public Builder setProfileIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      traitsId_ = value;
+      profileId_ = value;
       onChanged();
       return this;
     }

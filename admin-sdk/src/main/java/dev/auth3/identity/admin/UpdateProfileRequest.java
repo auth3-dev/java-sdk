@@ -4,27 +4,27 @@
 package dev.auth3.identity.admin;
 
 /**
- * Protobuf type {@code depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest}
+ * Protobuf type {@code depot.devtools.auth.v0.identity.admin.UpdateProfileRequest}
  */
-public final class UpdateTraitsRequest extends
+public final class UpdateProfileRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
-    UpdateTraitsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
+    UpdateProfileRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UpdateTraitsRequest.newBuilder() to construct.
-  private UpdateTraitsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateProfileRequest.newBuilder() to construct.
+  private UpdateProfileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateTraitsRequest() {
+  private UpdateProfileRequest() {
     identityId_ = "";
-    traits_ = "";
+    profile_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UpdateTraitsRequest();
+    return new UpdateProfileRequest();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UpdateTraitsRequest(
+  private UpdateProfileRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            traits_ = s;
+            profile_ = s;
             break;
           }
           default: {
@@ -83,15 +83,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateTraitsRequest_descriptor;
+    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateProfileRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateTraitsRequest_fieldAccessorTable
+    return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateProfileRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            dev.auth3.identity.admin.UpdateTraitsRequest.class, dev.auth3.identity.admin.UpdateTraitsRequest.Builder.class);
+            dev.auth3.identity.admin.UpdateProfileRequest.class, dev.auth3.identity.admin.UpdateProfileRequest.Builder.class);
   }
 
   public static final int IDENTITY_ID_FIELD_NUMBER = 1;
@@ -132,38 +132,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRAITS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object traits_;
+  public static final int PROFILE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object profile_;
   /**
-   * <code>string traits = 2[json_name = "traits"];</code>
-   * @return The traits.
+   * <code>string profile = 2[json_name = "profile"];</code>
+   * @return The profile.
    */
   @java.lang.Override
-  public java.lang.String getTraits() {
-    java.lang.Object ref = traits_;
+  public java.lang.String getProfile() {
+    java.lang.Object ref = profile_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      traits_ = s;
+      profile_ = s;
       return s;
     }
   }
   /**
-   * <code>string traits = 2[json_name = "traits"];</code>
-   * @return The bytes for traits.
+   * <code>string profile = 2[json_name = "profile"];</code>
+   * @return The bytes for profile.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTraitsBytes() {
-    java.lang.Object ref = traits_;
+      getProfileBytes() {
+    java.lang.Object ref = profile_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      traits_ = b;
+      profile_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -187,8 +187,8 @@ private static final long serialVersionUID = 0L;
     if (!getIdentityIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identityId_);
     }
-    if (!getTraitsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, traits_);
+    if (!getProfileBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, profile_);
     }
     unknownFields.writeTo(output);
   }
@@ -202,8 +202,8 @@ private static final long serialVersionUID = 0L;
     if (!getIdentityIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identityId_);
     }
-    if (!getTraitsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, traits_);
+    if (!getProfileBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, profile_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,15 +215,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof dev.auth3.identity.admin.UpdateTraitsRequest)) {
+    if (!(obj instanceof dev.auth3.identity.admin.UpdateProfileRequest)) {
       return super.equals(obj);
     }
-    dev.auth3.identity.admin.UpdateTraitsRequest other = (dev.auth3.identity.admin.UpdateTraitsRequest) obj;
+    dev.auth3.identity.admin.UpdateProfileRequest other = (dev.auth3.identity.admin.UpdateProfileRequest) obj;
 
     if (!getIdentityId()
         .equals(other.getIdentityId())) return false;
-    if (!getTraits()
-        .equals(other.getTraits())) return false;
+    if (!getProfile()
+        .equals(other.getProfile())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,76 +237,76 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + IDENTITY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getIdentityId().hashCode();
-    hash = (37 * hash) + TRAITS_FIELD_NUMBER;
-    hash = (53 * hash) + getTraits().hashCode();
+    hash = (37 * hash) + PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + getProfile().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(byte[] data)
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(java.io.InputStream input)
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseDelimitedFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static dev.auth3.identity.admin.UpdateTraitsRequest parseFrom(
+  public static dev.auth3.identity.admin.UpdateProfileRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(dev.auth3.identity.admin.UpdateTraitsRequest prototype) {
+  public static Builder newBuilder(dev.auth3.identity.admin.UpdateProfileRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest}
+   * Protobuf type {@code depot.devtools.auth.v0.identity.admin.UpdateProfileRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
-      dev.auth3.identity.admin.UpdateTraitsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
+      dev.auth3.identity.admin.UpdateProfileRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateTraitsRequest_descriptor;
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateProfileRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateTraitsRequest_fieldAccessorTable
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateProfileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              dev.auth3.identity.admin.UpdateTraitsRequest.class, dev.auth3.identity.admin.UpdateTraitsRequest.Builder.class);
+              dev.auth3.identity.admin.UpdateProfileRequest.class, dev.auth3.identity.admin.UpdateProfileRequest.Builder.class);
     }
 
-    // Construct using dev.auth3.identity.admin.UpdateTraitsRequest.newBuilder()
+    // Construct using dev.auth3.identity.admin.UpdateProfileRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       identityId_ = "";
 
-      traits_ = "";
+      profile_ = "";
 
       return this;
     }
@@ -382,17 +382,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateTraitsRequest_descriptor;
+      return dev.auth3.identity.admin.AdminProto.internal_static_depot_devtools_auth_v0_identity_admin_UpdateProfileRequest_descriptor;
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.UpdateTraitsRequest getDefaultInstanceForType() {
-      return dev.auth3.identity.admin.UpdateTraitsRequest.getDefaultInstance();
+    public dev.auth3.identity.admin.UpdateProfileRequest getDefaultInstanceForType() {
+      return dev.auth3.identity.admin.UpdateProfileRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.UpdateTraitsRequest build() {
-      dev.auth3.identity.admin.UpdateTraitsRequest result = buildPartial();
+    public dev.auth3.identity.admin.UpdateProfileRequest build() {
+      dev.auth3.identity.admin.UpdateProfileRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,10 +400,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public dev.auth3.identity.admin.UpdateTraitsRequest buildPartial() {
-      dev.auth3.identity.admin.UpdateTraitsRequest result = new dev.auth3.identity.admin.UpdateTraitsRequest(this);
+    public dev.auth3.identity.admin.UpdateProfileRequest buildPartial() {
+      dev.auth3.identity.admin.UpdateProfileRequest result = new dev.auth3.identity.admin.UpdateProfileRequest(this);
       result.identityId_ = identityId_;
-      result.traits_ = traits_;
+      result.profile_ = profile_;
       onBuilt();
       return result;
     }
@@ -442,22 +442,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof dev.auth3.identity.admin.UpdateTraitsRequest) {
-        return mergeFrom((dev.auth3.identity.admin.UpdateTraitsRequest)other);
+      if (other instanceof dev.auth3.identity.admin.UpdateProfileRequest) {
+        return mergeFrom((dev.auth3.identity.admin.UpdateProfileRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(dev.auth3.identity.admin.UpdateTraitsRequest other) {
-      if (other == dev.auth3.identity.admin.UpdateTraitsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(dev.auth3.identity.admin.UpdateProfileRequest other) {
+      if (other == dev.auth3.identity.admin.UpdateProfileRequest.getDefaultInstance()) return this;
       if (!other.getIdentityId().isEmpty()) {
         identityId_ = other.identityId_;
         onChanged();
       }
-      if (!other.getTraits().isEmpty()) {
-        traits_ = other.traits_;
+      if (!other.getProfile().isEmpty()) {
+        profile_ = other.profile_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -475,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      dev.auth3.identity.admin.UpdateTraitsRequest parsedMessage = null;
+      dev.auth3.identity.admin.UpdateProfileRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (dev.auth3.identity.admin.UpdateTraitsRequest) e.getUnfinishedMessage();
+        parsedMessage = (dev.auth3.identity.admin.UpdateProfileRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -565,78 +565,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object traits_ = "";
+    private java.lang.Object profile_ = "";
     /**
-     * <code>string traits = 2[json_name = "traits"];</code>
-     * @return The traits.
+     * <code>string profile = 2[json_name = "profile"];</code>
+     * @return The profile.
      */
-    public java.lang.String getTraits() {
-      java.lang.Object ref = traits_;
+    public java.lang.String getProfile() {
+      java.lang.Object ref = profile_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        traits_ = s;
+        profile_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string traits = 2[json_name = "traits"];</code>
-     * @return The bytes for traits.
+     * <code>string profile = 2[json_name = "profile"];</code>
+     * @return The bytes for profile.
      */
     public com.google.protobuf.ByteString
-        getTraitsBytes() {
-      java.lang.Object ref = traits_;
+        getProfileBytes() {
+      java.lang.Object ref = profile_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        traits_ = b;
+        profile_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string traits = 2[json_name = "traits"];</code>
-     * @param value The traits to set.
+     * <code>string profile = 2[json_name = "profile"];</code>
+     * @param value The profile to set.
      * @return This builder for chaining.
      */
-    public Builder setTraits(
+    public Builder setProfile(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      traits_ = value;
+      profile_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string traits = 2[json_name = "traits"];</code>
+     * <code>string profile = 2[json_name = "profile"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTraits() {
+    public Builder clearProfile() {
       
-      traits_ = getDefaultInstance().getTraits();
+      profile_ = getDefaultInstance().getProfile();
       onChanged();
       return this;
     }
     /**
-     * <code>string traits = 2[json_name = "traits"];</code>
-     * @param value The bytes for traits to set.
+     * <code>string profile = 2[json_name = "profile"];</code>
+     * @param value The bytes for profile to set.
      * @return This builder for chaining.
      */
-    public Builder setTraitsBytes(
+    public Builder setProfileBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      traits_ = value;
+      profile_ = value;
       onChanged();
       return this;
     }
@@ -653,41 +653,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
+    // @@protoc_insertion_point(builder_scope:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
-  private static final dev.auth3.identity.admin.UpdateTraitsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
+  private static final dev.auth3.identity.admin.UpdateProfileRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new dev.auth3.identity.admin.UpdateTraitsRequest();
+    DEFAULT_INSTANCE = new dev.auth3.identity.admin.UpdateProfileRequest();
   }
 
-  public static dev.auth3.identity.admin.UpdateTraitsRequest getDefaultInstance() {
+  public static dev.auth3.identity.admin.UpdateProfileRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateTraitsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateTraitsRequest>() {
+  private static final com.google.protobuf.Parser<UpdateProfileRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateProfileRequest>() {
     @java.lang.Override
-    public UpdateTraitsRequest parsePartialFrom(
+    public UpdateProfileRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateTraitsRequest(input, extensionRegistry);
+      return new UpdateProfileRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UpdateTraitsRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateProfileRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateTraitsRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateProfileRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public dev.auth3.identity.admin.UpdateTraitsRequest getDefaultInstanceForType() {
+  public dev.auth3.identity.admin.UpdateProfileRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
